@@ -171,6 +171,7 @@
                     <navigationItem key="navigationItem" id="shT-TS-jZG"/>
                     <connections>
                         <outlet property="detailImageView" destination="2Wk-6x-pVH" id="f8m-Gy-jIv"/>
+                        <outlet property="detailTableView" destination="NRr-OU-NDe" id="vfu-7R-1li"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbx-Kc-b7N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

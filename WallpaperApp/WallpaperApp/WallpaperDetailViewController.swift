@@ -1,10 +1,13 @@
 
 import UIKit
 
-class WallpaperDetailViewController: UIViewController {
+class WallpaperDetailViewController: UIViewController UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var detailImageView: UIImageView!
+    @IBOutlet weak var detailTableView: UITableView!
+
     var imageUrl: URL?
+    var userProfile: UserProfile? // APIから取得するデータを保持するプロパティ
 
     override func viewDidLoad() {
         super.viewDidLoad()

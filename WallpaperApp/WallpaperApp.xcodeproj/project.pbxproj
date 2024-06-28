@@ -17,6 +17,8 @@
 		BBE575DA2C2A58BD007CB638 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE575D82C2A58BD007CB638 /* Main.storyboard */; };
 		BBE575DC2C2A58BF007CB638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE575DB2C2A58BF007CB638 /* Assets.xcassets */; };
 		BBE575DF2C2A58BF007CB638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE575DD2C2A58BF007CB638 /* LaunchScreen.storyboard */; };
+		BBE5EA932C2E96F1001AC215 /* FooterTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE5EA922C2E96F1001AC215 /* FooterTabView.xib */; };
+		BBE5EA952C2E9E13001AC215 /* FakeFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE5EA942C2E9E13001AC215 /* FakeFooter.xib */; };
 		BBE9C4502C2A8C29009692A1 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9C44F2C2A8C29009692A1 /* WallpaperCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		BBE575DB2C2A58BF007CB638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBE575DE2C2A58BF007CB638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBE575E02C2A58BF007CB638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBE5EA922C2E96F1001AC215 /* FooterTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterTabView.xib; sourceTree = "<group>"; };
+		BBE5EA942C2E9E13001AC215 /* FakeFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FakeFooter.xib; sourceTree = "<group>"; };
 		BBE9C44F2C2A8C29009692A1 /* WallpaperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +79,8 @@
 				BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */,
 				BB86E98D2C2E4BFB001378E7 /* TagSearchViewController.swift */,
 				BBE575D82C2A58BD007CB638 /* Main.storyboard */,
+				BBE5EA922C2E96F1001AC215 /* FooterTabView.xib */,
+				BBE5EA942C2E9E13001AC215 /* FakeFooter.xib */,
 				BBE575DD2C2A58BF007CB638 /* LaunchScreen.storyboard */,
 				BBE575DB2C2A58BF007CB638 /* Assets.xcassets */,
 				BBE575E02C2A58BF007CB638 /* Info.plist */,
@@ -141,8 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE575DF2C2A58BF007CB638 /* LaunchScreen.storyboard in Resources */,
+				BBE5EA952C2E9E13001AC215 /* FakeFooter.xib in Resources */,
 				BBE575DC2C2A58BF007CB638 /* Assets.xcassets in Resources */,
 				BBE575DA2C2A58BD007CB638 /* Main.storyboard in Resources */,
+				BBE5EA932C2E96F1001AC215 /* FooterTabView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
