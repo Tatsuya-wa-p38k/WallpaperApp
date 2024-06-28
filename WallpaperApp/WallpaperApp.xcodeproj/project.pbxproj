@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB60247A2C2A80D600660422 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6024792C2A80D600660422 /* HomeViewController.swift */; };
+		BB86E98E2C2E4BFB001378E7 /* TagSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86E98D2C2E4BFB001378E7 /* TagSearchViewController.swift */; };
+		BB86E9902C2E579C001378E7 /* WallpaperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */; };
+		BB86E9922C2E6C79001378E7 /* WallpaperExpandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */; };
 		BBE575D32C2A58BD007CB638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE575D22C2A58BD007CB638 /* AppDelegate.swift */; };
 		BBE575D52C2A58BD007CB638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE575D42C2A58BD007CB638 /* SceneDelegate.swift */; };
 		BBE575D72C2A58BD007CB638 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE575D62C2A58BD007CB638 /* ViewController.swift */; };
 		BBE575DA2C2A58BD007CB638 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE575D82C2A58BD007CB638 /* Main.storyboard */; };
 		BBE575DC2C2A58BF007CB638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE575DB2C2A58BF007CB638 /* Assets.xcassets */; };
 		BBE575DF2C2A58BF007CB638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE575DD2C2A58BF007CB638 /* LaunchScreen.storyboard */; };
+		BBE9C4502C2A8C29009692A1 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9C44F2C2A8C29009692A1 /* WallpaperCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB6024792C2A80D600660422 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BB86E98D2C2E4BFB001378E7 /* TagSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchViewController.swift; sourceTree = "<group>"; };
+		BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperDetailViewController.swift; sourceTree = "<group>"; };
+		BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperExpandViewController.swift; sourceTree = "<group>"; };
 		BBE575CF2C2A58BD007CB638 /* WallpaperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallpaperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE575D22C2A58BD007CB638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBE575D42C2A58BD007CB638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +33,7 @@
 		BBE575DB2C2A58BF007CB638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBE575DE2C2A58BF007CB638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBE575E02C2A58BF007CB638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBE9C44F2C2A8C29009692A1 /* WallpaperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +69,14 @@
 				BBE575D22C2A58BD007CB638 /* AppDelegate.swift */,
 				BBE575D42C2A58BD007CB638 /* SceneDelegate.swift */,
 				BBE575D62C2A58BD007CB638 /* ViewController.swift */,
+				BB6024792C2A80D600660422 /* HomeViewController.swift */,
+				BBE9C44F2C2A8C29009692A1 /* WallpaperCell.swift */,
+				BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */,
+				BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */,
+				BB86E98D2C2E4BFB001378E7 /* TagSearchViewController.swift */,
 				BBE575D82C2A58BD007CB638 /* Main.storyboard */,
-				BBE575DB2C2A58BF007CB638 /* Assets.xcassets */,
 				BBE575DD2C2A58BF007CB638 /* LaunchScreen.storyboard */,
+				BBE575DB2C2A58BF007CB638 /* Assets.xcassets */,
 				BBE575E02C2A58BF007CB638 /* Info.plist */,
 			);
 			path = WallpaperApp;
@@ -138,9 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE9C4502C2A8C29009692A1 /* WallpaperCell.swift in Sources */,
+				BB86E98E2C2E4BFB001378E7 /* TagSearchViewController.swift in Sources */,
 				BBE575D72C2A58BD007CB638 /* ViewController.swift in Sources */,
 				BBE575D32C2A58BD007CB638 /* AppDelegate.swift in Sources */,
+				BB86E9902C2E579C001378E7 /* WallpaperDetailViewController.swift in Sources */,
+				BB86E9922C2E6C79001378E7 /* WallpaperExpandViewController.swift in Sources */,
 				BBE575D52C2A58BD007CB638 /* SceneDelegate.swift in Sources */,
+				BB60247A2C2A80D600660422 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
