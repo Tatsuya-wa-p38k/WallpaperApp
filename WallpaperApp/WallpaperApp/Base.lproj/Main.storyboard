@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PDf-aX-naL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J7G-b3-15O">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -32,9 +32,26 @@
                     <view key="view" contentMode="scaleToFill" id="O1A-HQ-7oe">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHh-q5-wEa" customClass="FooterTabView" customModule="WallpaperApp" customModuleProvider="target">
+                                <rect key="frame" x="40" y="834" width="350" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="4ql-dd-DC6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="NBu-Yw-iEw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NBu-Yw-iEw" firstAttribute="trailing" secondItem="UHh-q5-wEa" secondAttribute="trailing" constant="40" id="0mM-z8-ekS"/>
+                            <constraint firstItem="NBu-Yw-iEw" firstAttribute="bottom" secondItem="UHh-q5-wEa" secondAttribute="bottom" id="e8b-fy-3eG"/>
+                            <constraint firstItem="UHh-q5-wEa" firstAttribute="leading" secondItem="NBu-Yw-iEw" secondAttribute="leading" constant="40" id="qry-60-ZVo"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="footerTabView" destination="UHh-q5-wEa" id="3qc-p2-Ic5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ZZ-8f-YfM" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,7 +60,7 @@
         <!--Home View Controller-->
         <scene sceneID="ytI-Rn-oY0">
             <objects>
-                <viewController id="Jcj-6V-roi" customClass="HomeViewController" customModule="WallpaperApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="Jcj-6V-roi" customClass="HomeViewController" customModule="WallpaperApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3P8-BT-4Mv">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,6 +117,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6Y-rE-xSk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="923.72093023255809" y="-303.21888412017171"/>
+        </scene>
+        <!--Tag Search View Controller-->
+        <scene sceneID="nLp-JK-fro">
+            <objects>
+                <viewController id="Rsv-gN-bdT" customClass="TagSearchViewController" customModule="WallpaperApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZK9-5Q-wjl">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0du-XL-rsg">
+                                <rect key="frame" x="0.0" y="59" width="430" height="794"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="osh-PQ-oJm">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LHH-nO-lCM">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4ee-IW-AbH">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FCb-KR-aM3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FCb-KR-aM3" firstAttribute="leading" secondItem="4ee-IW-AbH" secondAttribute="leading" id="DYU-MJ-VKL"/>
+                                                <constraint firstItem="FCb-KR-aM3" firstAttribute="top" secondItem="4ee-IW-AbH" secondAttribute="top" id="UUw-Ij-LJZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="FCb-KR-aM3" secondAttribute="bottom" id="jcg-Pz-Cdm"/>
+                                                <constraint firstAttribute="trailing" secondItem="FCb-KR-aM3" secondAttribute="trailing" id="yDA-RY-0CY"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MD6-dz-CvM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MD6-dz-CvM" firstAttribute="bottom" secondItem="0du-XL-rsg" secondAttribute="bottom" constant="45" id="WYB-eX-N22"/>
+                            <constraint firstItem="0du-XL-rsg" firstAttribute="leading" secondItem="MD6-dz-CvM" secondAttribute="leading" id="cu1-D5-r2T"/>
+                            <constraint firstItem="0du-XL-rsg" firstAttribute="top" secondItem="MD6-dz-CvM" secondAttribute="top" id="puV-a8-dks"/>
+                            <constraint firstItem="MD6-dz-CvM" firstAttribute="trailing" secondItem="0du-XL-rsg" secondAttribute="trailing" id="wff-GG-ipe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTi-pG-WmG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="362"/>
         </scene>
         <!--Wallpaper Detail View Controller-->
         <scene sceneID="jDf-7q-yWt">
@@ -176,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbx-Kc-b7N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806.9767441860465" y="13.519313304721031"/>
+            <point key="canvasLocation" x="1857" y="467"/>
         </scene>
         <!--Wallpaper Expand View Controller-->
         <scene sceneID="nYS-gj-TMr">
@@ -205,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSy-op-BpY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2591" y="14"/>
+            <point key="canvasLocation" x="1772" y="-303"/>
         </scene>
     </scenes>
     <resources>

@@ -105,7 +105,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
         if indexPath.item == 0 {
-            return CGSize(width: width - 15, height: width) // 1枚目の画像を大きく表示
+            return CGSize(width: width, height: width) // 1枚目の画像を大きく表示
         } else {
             let smallerWidth = (width - 1) / 2
             return CGSize(width: smallerWidth, height: smallerWidth) // 2~5枚目の画像を小さく2列に表示

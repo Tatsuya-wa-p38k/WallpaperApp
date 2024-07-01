@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB1B07A52C32399B003017D7 /* FooterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B07A42C32399B003017D7 /* FooterTabView.swift */; };
 		BB60247A2C2A80D600660422 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6024792C2A80D600660422 /* HomeViewController.swift */; };
 		BB86E98E2C2E4BFB001378E7 /* TagSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86E98D2C2E4BFB001378E7 /* TagSearchViewController.swift */; };
 		BB86E9902C2E579C001378E7 /* WallpaperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB1B07A42C32399B003017D7 /* FooterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTabView.swift; sourceTree = "<group>"; };
 		BB6024792C2A80D600660422 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BB86E98D2C2E4BFB001378E7 /* TagSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchViewController.swift; sourceTree = "<group>"; };
 		BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperDetailViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				BB86E98D2C2E4BFB001378E7 /* TagSearchViewController.swift */,
 				BBE575D82C2A58BD007CB638 /* Main.storyboard */,
 				BBE5EA922C2E96F1001AC215 /* FooterTabView.xib */,
+				BB1B07A42C32399B003017D7 /* FooterTabView.swift */,
 				BBE575DD2C2A58BF007CB638 /* LaunchScreen.storyboard */,
 				BBE575DB2C2A58BF007CB638 /* Assets.xcassets */,
 				BBE575E02C2A58BF007CB638 /* Info.plist */,
@@ -163,6 +166,7 @@
 				BBE575D32C2A58BD007CB638 /* AppDelegate.swift in Sources */,
 				BB86E9902C2E579C001378E7 /* WallpaperDetailViewController.swift in Sources */,
 				BB86E9922C2E6C79001378E7 /* WallpaperExpandViewController.swift in Sources */,
+				BB1B07A52C32399B003017D7 /* FooterTabView.swift in Sources */,
 				BBE575D52C2A58BD007CB638 /* SceneDelegate.swift in Sources */,
 				BB60247A2C2A80D600660422 /* HomeViewController.swift in Sources */,
 			);
