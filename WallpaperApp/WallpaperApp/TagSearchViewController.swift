@@ -9,20 +9,25 @@ private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 // このクラスには、Unsplash APIから写真を取得する機能があります。
 class TagSearchAPI {
     static func fetchPhotosByTag(parameters: TagSearchParameters, completion: @escaping ([Photo]?) -> Void) {
+        // APIのURLを文字列として定義します。
         let urlString = "https://api.unsplash.com/search/photos?query=\(parameters.query)&color=\(parameters.color)&per_page=\(parameters.perPage)&client_id=\(accessKey)"
-
+        // URLオブジェクトを生成します。
+        // 文字列が正しいURLでない場合、nilを返して終了します。
         guard let url = URL(string: urlString) else {
             completion(nil)
             return
         }
 
+        // URLセッションを使用して、指定したURLからデータを非同期で取得します。
         URLSession.shared.dataTask(with: url) { data, response, error in
+            // データが取得でき、エラーがないか確認します。
             guard let data = data, error == nil else {
                 print("データの取得に失敗しました: \(error?.localizedDescription ?? "エラーなし")")
                 completion(nil)
                 return
             }
             do {
+                // 取得したデータをPhotoResultsの配列に変換します。
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let photoResults = try decoder.decode(PhotoResults.self, from: data)
@@ -33,36 +38,65 @@ class TagSearchAPI {
             }
         }.resume()// タスクを開始します。
     }
+    
 }
-
 
 class TagSearchViewController: UIViewController, UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout{
-
+    
     // コレクションビューをIBOutletとして接続します。
     @IBOutlet weak var tagCollectionView: UICollectionView!
 
     private var photos: [Photo] = []
-    var selectedColor: String = "red" // 例: ユーザーが選択した色
+    var selectedColor: String = "yellow" // 例: ユーザーが選択した色
 
+    // ビューがロードされたときに呼ばれるメソッドです。
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchPhotosForSelectedTag()
-        setupCollectionView()
-    }
-
-    private func setupCollectionView() {
+        
         if let flowLayout = tagCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.minimumInteritemSpacing = 0
-            flowLayout.minimumLineSpacing = 0
+            flowLayout.minimumInteritemSpacing = 1 // 画像間のスペースを1に設定
+            flowLayout.minimumLineSpacing = 1 // 行間のスペースを1に設定
         }
+        
+        fetchPhotosForSelectedTag()
         tagCollectionView.delegate = self
         tagCollectionView.dataSource = self
     }
 
+    @IBAction func redTagButton(_ sender: Any) {
+        selectedColor = "red"
+        fetchPhotosForSelectedTag()
+    }
+    
+    @IBAction func blueTagButton(_ sender: Any) {
+        selectedColor = "blue"
+        fetchPhotosForSelectedTag()
+    }
+    
+    @IBAction func greenTagButton(_ sender: Any) {
+        selectedColor = "green"
+        fetchPhotosForSelectedTag()
+    }
+    
+    @IBAction func yellowTagButton(_ sender: Any) {
+        selectedColor = "yellow"
+        fetchPhotosForSelectedTag()
+    }
+    
+    @IBAction func whiteTagButton(_ sender: Any) {
+        selectedColor = "white"
+        fetchPhotosForSelectedTag()
+    }
+    
+    @IBAction func blackTagButton(_ sender: Any) {
+        selectedColor = "black"
+        fetchPhotosForSelectedTag()
+    }
+    
     private func fetchPhotosForSelectedTag() {
         let parameters = TagSearchParameters(
-            query: selectedColor, // 例: ユーザーが入力した検索ワード
+            query: selectedColor,
             color: selectedColor,
             perPage: 5
         )

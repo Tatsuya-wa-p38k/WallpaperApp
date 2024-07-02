@@ -7,7 +7,6 @@ private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 // UnsplashAPIという名前のクラスを定義します。
 // このクラスには、Unsplash APIから写真を取得する機能があります。
 class UnsplashAPI {
-    // fetchPhotosという名前のメソッドを定義します。
     // このメソッドは非同期でAPIから写真を取得し、取得した写真をcompletionハンドラで返します。
     static func fetchPhotos(completion: @escaping ([Photo]?) -> Void) {
         // APIのURLを文字列として定義します。
