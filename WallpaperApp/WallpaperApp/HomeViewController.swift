@@ -25,6 +25,7 @@ class UnsplashAPI {
             completion(nil)
             return
         }
+
         // URLセッションを使用して、指定したURLからデータを非同期で取得します。
         URLSession.shared.dataTask(with: url) { data, response, error in
             // データが取得でき、エラーがないか確認します。

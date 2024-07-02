@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		BB1B07A52C32399B003017D7 /* FooterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B07A42C32399B003017D7 /* FooterTabView.swift */; };
+		BB28B2332C3399C6009D33BB /* TagSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB28B2322C3399C6009D33BB /* TagSearchViewController.swift */; };
 		BB60247A2C2A80D600660422 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6024792C2A80D600660422 /* HomeViewController.swift */; };
-		BB86E98E2C2E4BFB001378E7 /* TagSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86E98D2C2E4BFB001378E7 /* TagSearchViewController.swift */; };
 		BB86E9902C2E579C001378E7 /* WallpaperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */; };
 		BB86E9922C2E6C79001378E7 /* WallpaperExpandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */; };
+		BBE276FC2C33AD04004963E8 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE276FB2C33AD04004963E8 /* TagCell.swift */; };
+		BBE276FE2C33BDC0004963E8 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE276FD2C33BDC0004963E8 /* Struct.swift */; };
 		BBE575D32C2A58BD007CB638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE575D22C2A58BD007CB638 /* AppDelegate.swift */; };
 		BBE575D52C2A58BD007CB638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE575D42C2A58BD007CB638 /* SceneDelegate.swift */; };
 		BBE575D72C2A58BD007CB638 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE575D62C2A58BD007CB638 /* ViewController.swift */; };
@@ -24,10 +26,12 @@
 
 /* Begin PBXFileReference section */
 		BB1B07A42C32399B003017D7 /* FooterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTabView.swift; sourceTree = "<group>"; };
+		BB28B2322C3399C6009D33BB /* TagSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchViewController.swift; sourceTree = "<group>"; };
 		BB6024792C2A80D600660422 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		BB86E98D2C2E4BFB001378E7 /* TagSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchViewController.swift; sourceTree = "<group>"; };
 		BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperDetailViewController.swift; sourceTree = "<group>"; };
 		BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperExpandViewController.swift; sourceTree = "<group>"; };
+		BBE276FB2C33AD04004963E8 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
+		BBE276FD2C33BDC0004963E8 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		BBE575CF2C2A58BD007CB638 /* WallpaperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallpaperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE575D22C2A58BD007CB638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBE575D42C2A58BD007CB638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,11 +77,13 @@
 				BBE575D22C2A58BD007CB638 /* AppDelegate.swift */,
 				BBE575D42C2A58BD007CB638 /* SceneDelegate.swift */,
 				BBE575D62C2A58BD007CB638 /* ViewController.swift */,
+				BB28B2322C3399C6009D33BB /* TagSearchViewController.swift */,
 				BB6024792C2A80D600660422 /* HomeViewController.swift */,
 				BBE9C44F2C2A8C29009692A1 /* WallpaperCell.swift */,
+				BBE276FB2C33AD04004963E8 /* TagCell.swift */,
 				BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */,
+				BBE276FD2C33BDC0004963E8 /* Struct.swift */,
 				BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */,
-				BB86E98D2C2E4BFB001378E7 /* TagSearchViewController.swift */,
 				BBE575D82C2A58BD007CB638 /* Main.storyboard */,
 				BBE5EA922C2E96F1001AC215 /* FooterTabView.xib */,
 				BB1B07A42C32399B003017D7 /* FooterTabView.swift */,
@@ -161,14 +167,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE9C4502C2A8C29009692A1 /* WallpaperCell.swift in Sources */,
-				BB86E98E2C2E4BFB001378E7 /* TagSearchViewController.swift in Sources */,
 				BBE575D72C2A58BD007CB638 /* ViewController.swift in Sources */,
+				BBE276FC2C33AD04004963E8 /* TagCell.swift in Sources */,
 				BBE575D32C2A58BD007CB638 /* AppDelegate.swift in Sources */,
 				BB86E9902C2E579C001378E7 /* WallpaperDetailViewController.swift in Sources */,
 				BB86E9922C2E6C79001378E7 /* WallpaperExpandViewController.swift in Sources */,
 				BB1B07A52C32399B003017D7 /* FooterTabView.swift in Sources */,
 				BBE575D52C2A58BD007CB638 /* SceneDelegate.swift in Sources */,
+				BB28B2332C3399C6009D33BB /* TagSearchViewController.swift in Sources */,
 				BB60247A2C2A80D600660422 /* HomeViewController.swift in Sources */,
+				BBE276FE2C33BDC0004963E8 /* Struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,4 +15,5 @@ class WallpaperCell: UICollectionViewCell {
             }
         }.resume() // タスクを開始します。
     }
+
 }
