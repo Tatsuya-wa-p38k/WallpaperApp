@@ -13,48 +13,50 @@ class ViewController: UIViewController, FooterTabViewDelegate {
 
     override func viewDidLoad() {
          super.viewDidLoad()
-        swichViewController(selectedTab: .home)
+        switchViewController(selectedTab: .home)
     }
 
+    //homeViewControllerにもfooterTabを
     private lazy var homeViewController:HomeViewController = {
+        //name: "Main"とはMain.storyboardのことである
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController =  storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
         add(childViewController: viewController)
         return viewController
     }()
 
-    //tagSearchのページにもfooter
+    //tagSearchViewControllerにもfooterTabを
+    private lazy var tagSearchViewController:TagSearchViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var viewController =  storyboard.instantiateViewController(identifier: "TagSearchViewController") as! TagSearchViewController
+        add(childViewController: viewController)
+        return viewController
+    }()
 
-//    private lazy var homeViewController:HomeViewController = {
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        var viewController =  storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-//        add(childViewController: viewController)
-//        return viewController
-//    }()
-//
-//    private lazy var homeViewController:HomeViewController = {
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        var viewController =  storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-//        add(childViewController: viewController)
-//        return viewController
-//    }()
+    private lazy var appOverViewController:AppOverViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var viewController =  storyboard.instantiateViewController(identifier: "AppOverViewController") as! AppOverViewController
+        add(childViewController: viewController)
+        return viewController
+    }()
 
-    private func swichViewController(selectedTab: FooterTab) {
+    private func switchViewController(selectedTab: FooterTab) {
         switch selectedTab {
         case .home:
             add(childViewController: homeViewController)
-//            remove(childViewController: tagSearchViewController)
-//            remove(childViewController: appOverViewController)
-//        case .tagSearch:
-//            add(childViewController: tagSearchViewController)
-//            remove(childViewController: homeViewController)
-//            remove(childViewController: appOverViewController)
-//        case .appOverView:
-//            add(childViewController: appOverViewController)
-//            remove(childViewController: homeViewController)
-//            remove(childViewController: tagSearchViewController)
+            remove(childViewController: tagSearchViewController)
+            remove(childViewController: appOverViewController)
+        case .tagSearch:
+            add(childViewController: tagSearchViewController)
+            remove(childViewController: homeViewController)
+            remove(childViewController: appOverViewController)
+        case .appOverView:
+            add(childViewController: appOverViewController)
+            remove(childViewController: homeViewController)
+            remove(childViewController: tagSearchViewController)
         }
         self.selectedTab = selectedTab
+        // フッタービューを最前面に表示
         view.bringSubviewToFront(footerTabView)
     }
 
@@ -75,7 +77,7 @@ class ViewController: UIViewController, FooterTabViewDelegate {
     }
 
     func footerTabView(_ footerTabView: FooterTabView, didselectTab tab: FooterTab) {
-        // 処理を記述
+        switchViewController(selectedTab: tab)
     }
 
 }

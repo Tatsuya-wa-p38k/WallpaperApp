@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  WallpaperApp
-//
-//  Created by spark-06 on 2024/06/25.
-//
 
 import UIKit
 

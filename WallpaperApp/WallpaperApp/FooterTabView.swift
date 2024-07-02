@@ -3,6 +3,8 @@ import UIKit
 
 enum FooterTab {
     case home
+    case tagSearch
+    case appOverView
 }
 
 protocol FooterTabViewDelegate: AnyObject {
@@ -17,8 +19,16 @@ class FooterTabView: UIView {
     var delegate: FooterTabViewDelegate?
 
     @IBAction func didTapHome(_ sender: Any) {
-          delegate?.footerTabView(self, didselectTab: .home)
-      }
+        delegate?.footerTabView(self, didselectTab: .home)
+    }
+
+    @IBAction func didTapTagSearch(_ sender: Any) {
+        delegate?.footerTabView(self, didselectTab: .tagSearch)
+    }
+
+    @IBAction func didTapAppOverView(_ sender: Any) {
+        delegate?.footerTabView(self, didselectTab: .appOverView)
+    }
 
     //カスタムビューの初期化メソッド
     override init(frame: CGRect) {
@@ -34,16 +44,19 @@ class FooterTabView: UIView {
     }
 
     func setup() {
-        // shadowViewに影と丸みを付ける
-        shadowView.layer.shadowOpacity = 0.4
+        // shadowViewに影を設定
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 0.5
         shadowView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        shadowView.layer.shadowRadius = 30
-        shadowView.layer.cornerRadius = 30
-        contentView.clipsToBounds = true
+        shadowView.layer.shadowRadius = 4
 
-        // contentViewに丸みを付ける
+        // shadowViewとcontentViewの角を丸くする
+        shadowView.layer.cornerRadius = 30
         contentView.layer.cornerRadius = 30
-        contentView.clipsToBounds = true
+
+        // マスクを有効にすることで角を丸く表示
+        shadowView.layer.masksToBounds = false
+        contentView.layer.masksToBounds = true
     }
 
     func load() {

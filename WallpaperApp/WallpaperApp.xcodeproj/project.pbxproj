@@ -14,6 +14,7 @@
 		BB86E9922C2E6C79001378E7 /* WallpaperExpandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */; };
 		BBE276FC2C33AD04004963E8 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE276FB2C33AD04004963E8 /* TagCell.swift */; };
 		BBE276FE2C33BDC0004963E8 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE276FD2C33BDC0004963E8 /* Struct.swift */; };
+		BBE277022C33CDF1004963E8 /* AppOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE277012C33CDF1004963E8 /* AppOverViewController.swift */; };
 		BBE575D32C2A58BD007CB638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE575D22C2A58BD007CB638 /* AppDelegate.swift */; };
 		BBE575D52C2A58BD007CB638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE575D42C2A58BD007CB638 /* SceneDelegate.swift */; };
 		BBE575D72C2A58BD007CB638 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE575D62C2A58BD007CB638 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperExpandViewController.swift; sourceTree = "<group>"; };
 		BBE276FB2C33AD04004963E8 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		BBE276FD2C33BDC0004963E8 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		BBE277012C33CDF1004963E8 /* AppOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOverViewController.swift; sourceTree = "<group>"; };
 		BBE575CF2C2A58BD007CB638 /* WallpaperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallpaperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE575D22C2A58BD007CB638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBE575D42C2A58BD007CB638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,15 +76,16 @@
 		BBE575D12C2A58BD007CB638 /* WallpaperApp */ = {
 			isa = PBXGroup;
 			children = (
+				BBE276FD2C33BDC0004963E8 /* Struct.swift */,
+				BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */,
 				BBE575D22C2A58BD007CB638 /* AppDelegate.swift */,
 				BBE575D42C2A58BD007CB638 /* SceneDelegate.swift */,
 				BBE575D62C2A58BD007CB638 /* ViewController.swift */,
+				BBE277012C33CDF1004963E8 /* AppOverViewController.swift */,
 				BB28B2322C3399C6009D33BB /* TagSearchViewController.swift */,
 				BB6024792C2A80D600660422 /* HomeViewController.swift */,
 				BBE9C44F2C2A8C29009692A1 /* WallpaperCell.swift */,
 				BBE276FB2C33AD04004963E8 /* TagCell.swift */,
-				BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */,
-				BBE276FD2C33BDC0004963E8 /* Struct.swift */,
 				BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */,
 				BBE575D82C2A58BD007CB638 /* Main.storyboard */,
 				BBE5EA922C2E96F1001AC215 /* FooterTabView.xib */,
@@ -172,6 +175,7 @@
 				BBE575D32C2A58BD007CB638 /* AppDelegate.swift in Sources */,
 				BB86E9902C2E579C001378E7 /* WallpaperDetailViewController.swift in Sources */,
 				BB86E9922C2E6C79001378E7 /* WallpaperExpandViewController.swift in Sources */,
+				BBE277022C33CDF1004963E8 /* AppOverViewController.swift in Sources */,
 				BB1B07A52C32399B003017D7 /* FooterTabView.swift in Sources */,
 				BBE575D52C2A58BD007CB638 /* SceneDelegate.swift in Sources */,
 				BB28B2332C3399C6009D33BB /* TagSearchViewController.swift in Sources */,

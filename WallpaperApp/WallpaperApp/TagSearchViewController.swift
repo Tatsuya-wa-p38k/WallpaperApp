@@ -5,12 +5,6 @@ import UIKit
 // これはAPIを使うためのパスワードのようなものです。
 private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 
-struct TagSearchParameters {
-    let query: String
-    let color: String
-    let perPage: Int
-}
-
 // TagSearchAPIという名前のクラスを定義します。
 // このクラスには、Unsplash APIから写真を取得する機能があります。
 class TagSearchAPI {
@@ -37,19 +31,19 @@ class TagSearchAPI {
                 print("JSONのデコードに失敗しました: \(error.localizedDescription)")
                 completion(nil)
             }
-        }.resume()
+        }.resume()// タスクを開始します。
     }
 }
 
-struct PhotoResults: Codable {
-    let results: [Photo]
-}
 
-class TagSearchViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class TagSearchViewController: UIViewController, UICollectionViewDataSource,
+    UICollectionViewDelegateFlowLayout{
 
+    // コレクションビューをIBOutletとして接続します。
     @IBOutlet weak var tagCollectionView: UICollectionView!
+
     private var photos: [Photo] = []
-    var selectedColor: String = "blue" // 例: ユーザーが選択した色
+    var selectedColor: String = "red" // 例: ユーザーが選択した色
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,17 +80,38 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource, UIC
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! WallpaperCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
         let photo = photos[indexPath.item]
         if let urlString = photo.urls["regular"], let url = URL(string: urlString) {
             cell.configure(with: url)
         }
         return cell
     }
-
+    // アイテムのサイズを返すメソッドです。
+    // 最初のアイテムは大きく表示し、それ以降は小さく表示します。
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
-        return CGSize(width: width, height: width) // 全ての画像を正方形フォーマットで表示
+        if indexPath.item == 0 {
+            return CGSize(width: width, height: width) // 1枚目の画像を大きく表示
+        } else {
+            let smallerWidth = (width - 1) / 2
+            return CGSize(width: smallerWidth, height: smallerWidth) // 2~5枚目の画像を小さく2列に表示
+        }
+    }
+
+    // セクションのインセットを返すメソッドです。
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+
+    // セクション内の行間スペースを返すメソッドです。
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1 // 画像間のスペースを設定
+    }
+
+    // セクション内のアイテム間スペースを返すメソッドです。
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1 // 画像間のスペースを設定
     }
 }
 

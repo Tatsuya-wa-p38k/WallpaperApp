@@ -4,13 +4,6 @@ import UIKit
 // これはAPIを使うためのパスワードのようなものです。
 private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 
-// Photoという名前の構造体を定義します。
-// これはAPIから取得した写真データを整理して保存するためのものです。
-struct Photo: Codable {
-    // APIから取得した写真のURLを保存する辞書型のプロパティです。
-    let urls: [String: String]
-}
-
 // UnsplashAPIという名前のクラスを定義します。
 // このクラスには、Unsplash APIから写真を取得する機能があります。
 class UnsplashAPI {
@@ -128,15 +121,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return 1 // 画像間のスペースを設定
     }
 
-    // コレクションビューでアイテムが選択されたときに呼ばれるメソッドです。
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photo = photos[indexPath.item]
-        if let urlString = photo.urls["regular"], let url = URL(string: urlString) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let detailVC = storyboard.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as? WallpaperDetailViewController {
-                detailVC.imageUrl = url
-                navigationController?.pushViewController(detailVC, animated: true)
-            }
-        }
-    }
+//    // コレクションビューでアイテムが選択されたときに呼ばれるメソッドです。
+////    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+////        let photo = photos[indexPath.item]
+////        if let urlString = photo.urls["regular"], let url = URL(string: urlString) {
+////            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+////            if let detailVC = storyboard.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as? WallpaperDetailViewController {
+////                detailVC.imageUrl = url
+////                navigationController?.pushViewController(detailVC, animated: true)
+////            }
+////        }
+//    }
 }	
