@@ -210,6 +210,6 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         detailVC.updateDate = formatter.string(from: Date())
         navigationController?.pushViewController(detailVC, animated: true)
     }
-
 }
+
 

@@ -10,8 +10,6 @@ struct Photo: Codable {
 
 struct User: Codable {
     let name: String
-    let location: String? // locationプロパティを追加
-    let updated_at: String
 }
 
 struct PhotoResults: Codable {
