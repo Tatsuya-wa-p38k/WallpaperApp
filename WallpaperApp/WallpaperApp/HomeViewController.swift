@@ -137,16 +137,21 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return 1 // 画像間のスペースを設定
     }
 
-    //    // コレクションビューでアイテムが選択されたときに呼ばれるメソッドです。
-    ////    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    ////        let photo = photos[indexPath.item]
-    ////        if let urlString = photo.urls["regular"], let url = URL(string: urlString) {
-    ////            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    ////            if let detailVC = storyboard.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as? WallpaperDetailViewController {
-    ////                detailVC.imageUrl = url
-    ////                navigationController?.pushViewController(detailVC, animated: true)
-    ////            }
-    ////        }
-    //    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailVC = storyboard.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as? WallpaperDetailViewController else {
+            return
+        }
+        let selectedPhoto = photos[indexPath.item]
+        detailVC.imageUrl = selectedPhoto.urls["regular"]
+        detailVC.authorName = selectedPhoto.user.name
+        detailVC.source = "Unsplash"  // 配信元を適宜設定する必要があります
+        // 更新日を取得する場合、UnsplashAPIの仕様により写真の更新日を取得できますが、ここでは例として現在の日付を使います
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        detailVC.updateDate = formatter.string(from: Date())
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+
     
 }	

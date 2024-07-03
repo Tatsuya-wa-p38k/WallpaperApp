@@ -11,7 +11,7 @@ class TagSearchAPI {
         // APIのURLを文字列として定義します。
         let urlString = "https://api.unsplash.com/search/photos?query=\(parameters.query)&color=\(parameters.color)&per_page=\(parameters.perPage)&client_id=\(accessKey)"
         // URLオブジェクトを生成します。
-        // 文字列が正しいURLでない場合、nilを返して終了します。
+        // 文字列が正しいURLでない場合、nilを返して終了します。œ
         guard let url = URL(string: urlString) else {
             completion(nil)
             return
@@ -64,10 +64,20 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
             flowLayout.minimumLineSpacing = 1 // 行間のスペースを1に設定
         }
         
+        setupButtons()
         fetchPhotosForSelectedTag()
         tagCollectionView.delegate = self
         tagCollectionView.dataSource = self
     }
+    
+    private func setupButtons() {
+        let buttons = [redButton, blueButton, greenButton, yellowButton, whiteButton, blackButton]
+        for button in buttons {
+            button?.layer.cornerRadius = 6 // 角を丸くする半径を指定
+            button?.layer.masksToBounds = true // 角を丸くする
+        }
+    }
+    
 
 
     @IBAction func redTagButton(_ sender: Any) {
@@ -184,5 +194,22 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1 // 画像間のスペースを設定
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailVC = storyboard.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as? WallpaperDetailViewController else {
+            return
+        }
+        let selectedPhoto = photos[indexPath.item]
+        detailVC.imageUrl = selectedPhoto.urls["regular"]
+        detailVC.authorName = selectedPhoto.user.name
+        detailVC.source = "Unsplash"  // 配信元を適宜設定する必要があります
+        // 更新日を取得する場合、UnsplashAPIの仕様により写真の更新日を取得できますが、ここでは例として現在の日付を使います
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        detailVC.updateDate = formatter.string(from: Date())
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+
 }
 

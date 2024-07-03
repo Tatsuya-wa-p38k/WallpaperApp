@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PDf-aX-naL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PDf-aX-naL">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -23,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtW-Oo-dJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-682" y="33"/>
+            <point key="canvasLocation" x="-1338" y="33"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="J4G-va-A2K">
@@ -56,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ZZ-8f-YfM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="33"/>
+            <point key="canvasLocation" x="-504" y="33"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ytI-Rn-oY0">
@@ -214,19 +215,18 @@
                                 <rect key="frame" x="15" y="74" width="400" height="114"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uq0-gv-Z1C">
-                                        <rect key="frame" x="46" y="50" width="50" height="25"/>
+                                        <rect key="frame" x="74" y="38" width="50" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="contentEdgeInsets" minX="30" minY="3" maxX="30" maxY="3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="red"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="red"/>
                                         <connections>
                                             <action selector="redTagButton:" destination="Rsv-gN-bdT" eventType="touchUpInside" id="TKu-w7-8oi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEW-2F-sI2">
-                                        <rect key="frame" x="123" y="46" width="57" height="24"/>
+                                        <rect key="frame" x="148" y="38" width="57" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -236,7 +236,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydN-Kz-hff">
-                                        <rect key="frame" x="188" y="50" width="68" height="20"/>
+                                        <rect key="frame" x="213" y="40" width="68" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -246,7 +246,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opj-qZ-mcv">
-                                        <rect key="frame" x="35" y="83" width="72" height="23"/>
+                                        <rect key="frame" x="63" y="83" width="72" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -256,7 +256,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eas-BU-c6G">
-                                        <rect key="frame" x="123" y="83" width="65" height="19"/>
+                                        <rect key="frame" x="143" y="81" width="65" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -265,8 +265,14 @@
                                             <action selector="whiteTagButton:" destination="Rsv-gN-bdT" eventType="touchUpInside" id="uLI-73-O4J"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タグ検索" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clL-hd-jss">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="21"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiN-Bq-rgl">
-                                        <rect key="frame" x="204" y="81" width="65" height="21"/>
+                                        <rect key="frame" x="231" y="85" width="65" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -275,12 +281,6 @@
                                             <action selector="blackTagButton:" destination="Rsv-gN-bdT" eventType="touchUpInside" id="fs7-gy-ZG8"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タグ検索" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clL-hd-jss">
-                                        <rect key="frame" x="0.0" y="0.0" width="84" height="21"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="21"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -315,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTi-pG-WmG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="371"/>
+            <point key="canvasLocation" x="924" y="342"/>
         </scene>
         <!--App Over View Controller-->
         <scene sceneID="0tE-2I-cXr">
@@ -332,7 +332,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8M-mn-Da5">
-                                <rect key="frame" x="15" y="107" width="372.33333333333331" height="40.666666666666657"/>
+                                <rect key="frame" x="15" y="107" width="346.66666666666669" height="40.666666666666657"/>
                                 <string key="text">このアプリはUnsplash APIを利用して構築した
 Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -388,7 +388,7 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nvv-ET-kbP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nvv-ET-kbP">
                                 <rect key="frame" x="15" y="30" width="400" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Nvv-ET-kbP" secondAttribute="height" multiplier="1:1" id="SIm-C7-X9e"/>
@@ -518,21 +518,28 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="shT-TS-jZG"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="lNq-XF-sD5" id="iRX-Ei-EIz"/>
+                        <outlet property="detailImageView" destination="Nvv-ET-kbP" id="hHf-VZ-va5"/>
+                        <outlet property="sourceLabel" destination="2fa-HC-xma" id="DbT-K1-dON"/>
+                        <outlet property="updateLabel" destination="EzK-bL-DSG" id="nsX-PI-ZUf"/>
+                        <segue destination="Wl4-Ae-bS0" kind="show" id="9ie-8i-e1L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbx-Kc-b7N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1762" y="33"/>
+            <point key="canvasLocation" x="1801" y="21"/>
         </scene>
         <!--Wallpaper Expand View Controller-->
         <scene sceneID="nYS-gj-TMr">
             <objects>
                 <viewController storyboardIdentifier="WallpaperExpandViewController" id="Wl4-Ae-bS0" customClass="WallpaperExpandViewController" customModule="WallpaperApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LQc-os-qzw">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Oh-8j-79V">
-                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l74-HP-vPj"/>
@@ -544,13 +551,14 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                             <constraint firstItem="l74-HP-vPj" firstAttribute="bottom" secondItem="6Oh-8j-79V" secondAttribute="bottom" id="iqb-tg-Qyv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="c5g-8c-Eg3"/>
                     <connections>
                         <outlet property="expandedImageView" destination="6Oh-8j-79V" id="E0f-GM-TtK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSy-op-BpY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2526" y="33"/>
+            <point key="canvasLocation" x="2526" y="21"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
