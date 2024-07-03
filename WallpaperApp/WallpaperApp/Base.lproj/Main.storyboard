@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtW-Oo-dJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-691" y="123"/>
+            <point key="canvasLocation" x="-682" y="33"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="J4G-va-A2K">
@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ZZ-8f-YfM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="123"/>
+            <point key="canvasLocation" x="117" y="33"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ytI-Rn-oY0">
@@ -310,11 +310,12 @@
                         <outlet property="tagCollectionView" destination="0du-XL-rsg" id="dxP-vw-mHl"/>
                         <outlet property="whiteButton" destination="eas-BU-c6G" id="7e0-vP-6e1"/>
                         <outlet property="yellowButton" destination="opj-qZ-mcv" id="Uv1-tj-zBr"/>
+                        <segue destination="ldh-AI-cbk" kind="show" id="hD8-ZB-BaW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTi-pG-WmG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923.72093023255809" y="388.84120171673823"/>
+            <point key="canvasLocation" x="924" y="371"/>
         </scene>
         <!--App Over View Controller-->
         <scene sceneID="0tE-2I-cXr">
@@ -377,7 +378,7 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Eq-P2-BLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="1076"/>
+            <point key="canvasLocation" x="924" y="1059"/>
         </scene>
         <!--Wallpaper Detail View Controller-->
         <scene sceneID="jDf-7q-yWt">
@@ -520,7 +521,7 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbx-Kc-b7N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1729" y="-303"/>
+            <point key="canvasLocation" x="1762" y="33"/>
         </scene>
         <!--Wallpaper Expand View Controller-->
         <scene sceneID="nYS-gj-TMr">
@@ -549,9 +550,12 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSy-op-BpY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528" y="-303"/>
+            <point key="canvasLocation" x="2526" y="33"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tHv-e3-jGR"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="240" height="54"/>
         <systemColor name="linkColor">
