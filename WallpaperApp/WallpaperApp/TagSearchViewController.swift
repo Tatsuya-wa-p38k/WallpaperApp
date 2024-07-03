@@ -5,7 +5,6 @@ import UIKit
 // これはAPIを使うためのパスワードのようなものです。
 private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 
-// TagSearchAPIという名前のクラスを定義します。
 // このクラスには、Unsplash APIから写真を取得する機能があります。
 class TagSearchAPI {
     static func fetchPhotosByTag(parameters: TagSearchParameters, completion: @escaping ([Photo]?) -> Void) {
@@ -43,9 +42,15 @@ class TagSearchAPI {
 
 class TagSearchViewController: UIViewController, UICollectionViewDataSource,
     UICollectionViewDelegateFlowLayout{
-    
-    // コレクションビューをIBOutletとして接続します。
+
     @IBOutlet weak var tagCollectionView: UICollectionView!
+
+    @IBOutlet weak var redButton: UIButton!
+    @IBOutlet weak var blueButton: UIButton!
+    @IBOutlet weak var greenButton: UIButton!
+    @IBOutlet weak var yellowButton: UIButton!
+    @IBOutlet weak var whiteButton: UIButton!
+    @IBOutlet weak var blackButton: UIButton!
 
     private var photos: [Photo] = []
     var selectedColor: String = "yellow" // 例: ユーザーが選択した色
@@ -64,34 +69,64 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         tagCollectionView.dataSource = self
     }
 
+
     @IBAction func redTagButton(_ sender: Any) {
+        resetButtonColors()
         selectedColor = "red"
-        fetchPhotosForSelectedTag()
+         fetchPhotosForSelectedTag()
+         // ボタンの文字色と背景色を変更する
+         redButton.backgroundColor = .black
+         redButton.tintColor = .white
     }
     
     @IBAction func blueTagButton(_ sender: Any) {
+        resetButtonColors()
         selectedColor = "blue"
         fetchPhotosForSelectedTag()
+        // ボタンの文字色と背景色を変更する
+        blueButton.backgroundColor = .black
+        blueButton.tintColor = .white
     }
     
     @IBAction func greenTagButton(_ sender: Any) {
+        resetButtonColors()
         selectedColor = "green"
         fetchPhotosForSelectedTag()
+        // ボタンの文字色と背景色を変更する
+        greenButton.backgroundColor = .black
+        greenButton.tintColor = .white
     }
     
     @IBAction func yellowTagButton(_ sender: Any) {
+        resetButtonColors()
         selectedColor = "yellow"
         fetchPhotosForSelectedTag()
+        yellowButton.backgroundColor = .black
+        yellowButton.tintColor = .white
     }
     
     @IBAction func whiteTagButton(_ sender: Any) {
+        resetButtonColors()
         selectedColor = "white"
         fetchPhotosForSelectedTag()
+        whiteButton.backgroundColor = .black
+        whiteButton.tintColor = .white
     }
     
     @IBAction func blackTagButton(_ sender: Any) {
+        resetButtonColors()
         selectedColor = "black"
         fetchPhotosForSelectedTag()
+        blackButton.backgroundColor = .black
+        blackButton.tintColor = .white
+    }
+
+    private func resetButtonColors() {
+        let buttons = [redButton, blueButton, greenButton, yellowButton, whiteButton, blackButton]
+        for button in buttons {
+            button?.backgroundColor = .clear
+            button?.tintColor = .black
+        }
     }
     
     private func fetchPhotosForSelectedTag() {
@@ -117,10 +152,12 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
         let photo = photos[indexPath.item]
         if let urlString = photo.urls["regular"], let url = URL(string: urlString) {
-            cell.configure(with: url)
+            let authorName = photo.user.name
+            cell.configure(with: url, author: authorName)
         }
         return cell
     }
+
     // アイテムのサイズを返すメソッドです。
     // 最初のアイテムは大きく表示し、それ以降は小さく表示します。
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

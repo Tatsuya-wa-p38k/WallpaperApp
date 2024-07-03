@@ -7,7 +7,7 @@ private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 // UnsplashAPIという名前のクラスを定義します。
 // このクラスには、Unsplash APIから写真を取得する機能があります。
 class UnsplashAPI {
-    // このメソッドは非同期でAPIから写真を取得し、取得した写真をcompletionハンドラで返します。
+    //このメソッドは非同期でAPIから写真を取得し、取得した写真をcompletionハンドラで返します。
     static func fetchPhotos(completion: @escaping ([Photo]?) -> Void) {
         // APIのURLを文字列として定義します。
         let urlString = "https://api.unsplash.com/photos/?per_page=5&order_by=latest&client_id=\(accessKey)"
@@ -47,7 +47,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     // コレクションビューをIBOutletとして接続します。
     @IBOutlet weak var wallpaperCollectionView: UICollectionView!
-
     // 写真の配列を保持するためのプロパティです。
     private var photos: [Photo] = []
 
@@ -56,11 +55,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
+        // SectionHeaderを登録します。
+        wallpaperCollectionView.register(UINib(nibName: "SectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"SectionHeader")
+
         // コレクションビューのレイアウトを設定します。
         // 画像間のスペースを0に設定します。
         if let flowLayout = wallpaperCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.minimumInteritemSpacing = 0
             flowLayout.minimumLineSpacing = 0
+
+            
         }
 
         // UnsplashAPIから写真を取得します。
@@ -72,9 +76,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.wallpaperCollectionView.reloadData()
             }
         }
-        // コレクションビューのデータソースとデリゲートを設定します。
+
         wallpaperCollectionView.delegate = self
         wallpaperCollectionView.dataSource = self
+
     }
 
     // セクション内のアイテム数を返すメソッドです。
@@ -88,9 +93,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WallpaperCell", for: indexPath) as! WallpaperCell
         let photo = photos[indexPath.item]
         if let urlString = photo.urls["regular"], let url = URL(string: urlString) {
-            cell.configure(with: url)
+            let authorName = photo.user.name
+            cell.configure(with: url, author: authorName)
         }
+        
         return cell
+        
+    }
+
+    //コレクションビューのセクションヘッダーを利用するために使用
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
+        header.configure(title: "新着写真")
+        return header
+        
     }
 
     // アイテムのサイズを返すメソッドです。
@@ -103,6 +119,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let smallerWidth = (width - 1) / 2
             return CGSize(width: smallerWidth, height: smallerWidth) // 2~5枚目の画像を小さく2列に表示
         }
+        
     }
 
     // セクションのインセットを返すメソッドです。
@@ -120,15 +137,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return 1 // 画像間のスペースを設定
     }
 
-//    // コレクションビューでアイテムが選択されたときに呼ばれるメソッドです。
-////    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-////        let photo = photos[indexPath.item]
-////        if let urlString = photo.urls["regular"], let url = URL(string: urlString) {
-////            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-////            if let detailVC = storyboard.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as? WallpaperDetailViewController {
-////                detailVC.imageUrl = url
-////                navigationController?.pushViewController(detailVC, animated: true)
-////            }
-////        }
-//    }
+    //    // コレクションビューでアイテムが選択されたときに呼ばれるメソッドです。
+    ////    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    ////        let photo = photos[indexPath.item]
+    ////        if let urlString = photo.urls["regular"], let url = URL(string: urlString) {
+    ////            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    ////            if let detailVC = storyboard.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as? WallpaperDetailViewController {
+    ////                detailVC.imageUrl = url
+    ////                navigationController?.pushViewController(detailVC, animated: true)
+    ////            }
+    ////        }
+    //    }
+    
 }	

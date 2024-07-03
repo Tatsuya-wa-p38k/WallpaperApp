@@ -3,8 +3,13 @@ import Foundation
 
 // これはAPIから取得した写真データを整理して保存するためのものです。
 struct Photo: Codable {
-    // APIから取得した写真のURLを保存する辞書型のプロパティです。
+    let id: String
     let urls: [String: String]
+    let user: User
+}
+
+struct User: Codable {
+    let name: String
 }
 
 struct PhotoResults: Codable {
