@@ -36,3 +36,9 @@ struct UnsplachPhotoURLs:Codable {
     let regular: String
     let full: String
 }
+
+struct SearchResults: Codable {
+    let total: Int
+    let totalPages: Int
+    let results: [Photo]
+}

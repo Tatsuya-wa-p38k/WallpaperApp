@@ -39,11 +39,71 @@ class UnsplashAPI {
             }
         }.resume()// タスクを開始します。
     }
+    
+    class UnsplashAPI {
+        static func searchPhotos(query: String, completion: @escaping ([Photo]?) -> Void) {
+            let urlString = "https://api.unsplash.com/search/photos?page=1&query=\(query)&client_id=\(accessKey)"
+            guard let url = URL(string: urlString) else {
+                completion(nil)
+                return
+            }
+
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("データの取得に失敗しました: \(error?.localizedDescription ?? "エラーなし")")
+                    completion(nil)
+                    return
+                }
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let searchResults = try decoder.decode(SearchResults.self, from: data)
+                    completion(searchResults.results)
+                } catch {
+                    print("JSONのデコードに失敗しました: \(error.localizedDescription)")
+                    completion(nil)
+                }
+            }.resume()
+        }
+    }
+
+    struct SearchResults: Codable {
+        let total: Int
+        let totalPages: Int
+        let results: [Photo]
+    }
+
+    
+    static func searchPhotos(query: String, completion: @escaping ([Photo]?) -> Void) {
+           let urlString = "https://api.unsplash.com/search/photos?page=1&query=\(query)&client_id=\(accessKey)"
+           guard let url = URL(string: urlString) else {
+               completion(nil)
+               return
+           }
+
+           URLSession.shared.dataTask(with: url) { data, response, error in
+               guard let data = data, error == nil else {
+                   print("データの取得に失敗しました: \(error?.localizedDescription ?? "エラーなし")")
+                   completion(nil)
+                   return
+               }
+               do {
+                   let decoder = JSONDecoder()
+                   decoder.keyDecodingStrategy = .convertFromSnakeCase
+                   let searchResults = try decoder.decode(SearchResults.self, from: data)
+                   completion(searchResults.results)
+               } catch {
+                   print("JSONのデコードに失敗しました: \(error.localizedDescription)")
+                   completion(nil)
+               }
+           }.resume()
+       }
 }
+
 
 // HomeViewControllerという名前のクラスを定義します。
 // このクラスはUIViewControllerを継承し、コレクションビューに写真を表示します。
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
     // コレクションビューをIBOutletとして接続します。
     @IBOutlet weak var wallpaperCollectionView: UICollectionView!
@@ -54,6 +114,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        searchBar.placeholder = "Search photos"
+        self.navigationItem.titleView = searchBar
 
         // SectionHeaderを登録します。
         wallpaperCollectionView.register(UINib(nibName: "SectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"SectionHeader")
@@ -78,6 +143,31 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         wallpaperCollectionView.delegate = self
         wallpaperCollectionView.dataSource = self
 
+    }
+    
+    // UISearchBarDelegate method
+     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+         guard let query = searchBar.text, !query.isEmpty else { return }
+         searchPhotos(query: query)
+     }
+    
+    private func searchPhotos(query: String) {
+         UnsplashAPI.searchPhotos(query: query) { [weak self] photos in
+             guard let self = self, let photos = photos else { return }
+             self.photos = photos
+             DispatchQueue.main.async {
+                 self.wallpaperCollectionView.reloadData()
+                 self.showSearchResults(query: query)
+             }
+         }
+     }
+    
+    private func showSearchResults(query: String) {
+        let urlString = "https://unsplash.com/s/photos/\(query)"
+        let resultVC = ResultSearchViewController()
+        resultVC.urlString = urlString
+        let navController = UINavigationController(rootViewController: resultVC)
+        self.present(navController, animated: true, completion: nil)
     }
 
     // セクション内のアイテム数を返すメソッドです。

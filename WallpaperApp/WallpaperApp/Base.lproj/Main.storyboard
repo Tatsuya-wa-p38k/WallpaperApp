@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PDf-aX-naL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PDf-aX-naL">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -66,8 +67,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K2X-Y4-xCC">
-                                <rect key="frame" x="15" y="59" width="400" height="749"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K2X-Y4-xCC">
+                                <rect key="frame" x="15" y="59" width="400" height="488"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="X9G-Ha-Nrt">
                                     <size key="itemSize" width="128" height="128"/>
@@ -126,6 +127,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                             </collectionView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1Q-h7-CyN">
+                                <rect key="frame" x="0.0" y="690" width="430" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Jcj-6V-roi" id="t4k-sJ-YfR"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VVM-zT-hkV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -438,7 +447,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8M-mn-Da5">
-                                <rect key="frame" x="15" y="107" width="372.33333333333331" height="40.666666666666657"/>
+                                <rect key="frame" x="15" y="107" width="346.66666666666669" height="40.666666666666657"/>
                                 <string key="text">このアプリはUnsplash APIを利用して構築した
 Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -519,6 +528,37 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHW-2B-qfQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1835" y="1444"/>
+        </scene>
+        <!--Result Search View Controller-->
+        <scene sceneID="ERf-hL-cTj">
+            <objects>
+                <viewController id="bCg-t2-ARd" customClass="ResultSearchViewController" customModule="WallpaperApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ugy-PJ-aXI">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7V-VF-Ghf">
+                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="673-lQ-eJs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="673-lQ-eJs" firstAttribute="bottom" secondItem="G7V-VF-Ghf" secondAttribute="bottom" id="33D-XK-7pO"/>
+                            <constraint firstItem="673-lQ-eJs" firstAttribute="trailing" secondItem="G7V-VF-Ghf" secondAttribute="trailing" id="O4H-AF-giB"/>
+                            <constraint firstItem="G7V-VF-Ghf" firstAttribute="leading" secondItem="673-lQ-eJs" secondAttribute="leading" id="l5P-pe-g32"/>
+                            <constraint firstItem="G7V-VF-Ghf" firstAttribute="top" secondItem="673-lQ-eJs" secondAttribute="top" id="sE1-wC-SF5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fpd-5J-ZBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847" y="2094"/>
         </scene>
         <!--Author Page View Controller-->
         <scene sceneID="nJk-fB-pUN">
@@ -732,11 +772,11 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSy-op-BpY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2642.7906976744184" y="20.600858369098713"/>
+            <point key="canvasLocation" x="2636" y="33"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hD8-ZB-BaW"/>
+        <segue reference="tHv-e3-jGR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="240" height="54"/>

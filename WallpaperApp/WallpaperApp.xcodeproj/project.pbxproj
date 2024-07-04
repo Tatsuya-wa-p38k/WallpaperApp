@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27AE75D32C36E53200F6D02A /* ResultSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE75D22C36E53200F6D02A /* ResultSearchViewController.swift */; };
 		BB00E12B2C3502B000072B3D /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB00E12A2C3502B000072B3D /* SectionHeader.xib */; };
 		BB00E12D2C3504CA00072B3D /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00E12C2C3504CA00072B3D /* SectionHeader.swift */; };
 		BB07C38D2C362E9B00D3A9BB /* AuthorPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07C38C2C362E9B00D3A9BB /* AuthorPageViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27AE75D22C36E53200F6D02A /* ResultSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearchViewController.swift; sourceTree = "<group>"; };
 		BB00E12A2C3502B000072B3D /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		BB00E12C2C3504CA00072B3D /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		BB07C38C2C362E9B00D3A9BB /* AuthorPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorPageViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				BB00E12C2C3504CA00072B3D /* SectionHeader.swift */,
 				BB86E9912C2E6C79001378E7 /* WallpaperExpandViewController.swift */,
 				BBE575D82C2A58BD007CB638 /* Main.storyboard */,
+				27AE75D22C36E53200F6D02A /* ResultSearchViewController.swift */,
 				BB07C38E2C36876100D3A9BB /* ToUnsplashWebsiteViewController.swift */,
 				BBE5EA922C2E96F1001AC215 /* FooterTabView.xib */,
 				BB1B07A42C32399B003017D7 /* FooterTabView.swift */,
@@ -196,6 +199,7 @@
 				BB28B2332C3399C6009D33BB /* TagSearchViewController.swift in Sources */,
 				BB60247A2C2A80D600660422 /* HomeViewController.swift in Sources */,
 				BBE276FE2C33BDC0004963E8 /* Struct.swift in Sources */,
+				27AE75D32C36E53200F6D02A /* ResultSearchViewController.swift in Sources */,
 				BB00E12D2C3504CA00072B3D /* SectionHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
