@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BB00E12B2C3502B000072B3D /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB00E12A2C3502B000072B3D /* SectionHeader.xib */; };
 		BB00E12D2C3504CA00072B3D /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00E12C2C3504CA00072B3D /* SectionHeader.swift */; };
+		BB07C38D2C362E9B00D3A9BB /* AuthorPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07C38C2C362E9B00D3A9BB /* AuthorPageViewController.swift */; };
 		BB1B07A52C32399B003017D7 /* FooterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B07A42C32399B003017D7 /* FooterTabView.swift */; };
 		BB28B2332C3399C6009D33BB /* TagSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB28B2322C3399C6009D33BB /* TagSearchViewController.swift */; };
 		BB60247A2C2A80D600660422 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6024792C2A80D600660422 /* HomeViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		BB00E12A2C3502B000072B3D /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		BB00E12C2C3504CA00072B3D /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		BB07C38C2C362E9B00D3A9BB /* AuthorPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorPageViewController.swift; sourceTree = "<group>"; };
 		BB1B07A42C32399B003017D7 /* FooterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTabView.swift; sourceTree = "<group>"; };
 		BB28B2322C3399C6009D33BB /* TagSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchViewController.swift; sourceTree = "<group>"; };
 		BB6024792C2A80D600660422 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		BBE575D12C2A58BD007CB638 /* WallpaperApp */ = {
 			isa = PBXGroup;
 			children = (
+				BB07C38C2C362E9B00D3A9BB /* AuthorPageViewController.swift */,
 				BBE276FD2C33BDC0004963E8 /* Struct.swift */,
 				BB86E98F2C2E579C001378E7 /* WallpaperDetailViewController.swift */,
 				BBE575D22C2A58BD007CB638 /* AppDelegate.swift */,
@@ -180,6 +183,7 @@
 				BBE575D72C2A58BD007CB638 /* ViewController.swift in Sources */,
 				BBE276FC2C33AD04004963E8 /* TagCell.swift in Sources */,
 				BBE575D32C2A58BD007CB638 /* AppDelegate.swift in Sources */,
+				BB07C38D2C362E9B00D3A9BB /* AuthorPageViewController.swift in Sources */,
 				BB86E9902C2E579C001378E7 /* WallpaperDetailViewController.swift in Sources */,
 				BB86E9922C2E6C79001378E7 /* WallpaperExpandViewController.swift in Sources */,
 				BBE277022C33CDF1004963E8 /* AppOverViewController.swift in Sources */,

@@ -6,10 +6,14 @@ struct Photo: Codable {
     let id: String
     let urls: [String: String]
     let user: User
+    let updatedAt: String // updated_atプロパティを追加
+    
 }
 
 struct User: Codable {
     let name: String
+    let username: String
+    let location: String? // locationプロパティを追加
 }
 
 struct PhotoResults: Codable {

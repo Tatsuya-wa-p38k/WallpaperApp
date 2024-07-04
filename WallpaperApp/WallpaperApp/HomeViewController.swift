@@ -63,8 +63,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         if let flowLayout = wallpaperCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.minimumInteritemSpacing = 0
             flowLayout.minimumLineSpacing = 0
-
-            
         }
 
         // UnsplashAPIから写真を取得します。
@@ -145,13 +143,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let selectedPhoto = photos[indexPath.item]
         detailVC.imageUrl = selectedPhoto.urls["regular"]
         detailVC.authorName = selectedPhoto.user.name
-        detailVC.source = "Unsplash"  // 配信元を適宜設定する必要があります
-        // 更新日を取得する場合、UnsplashAPIの仕様により写真の更新日を取得できますが、ここでは例として現在の日付を使います
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        detailVC.updateDate = formatter.string(from: Date())
+        detailVC.source = selectedPhoto.user.location ?? "Location not available"
+        detailVC.authorNameToPage = selectedPhoto.user.username
+
+        // 日付フォーマッタを使用して更新日をフォーマット
+        let formatter = ISO8601DateFormatter()
+        if let date = formatter.date(from: selectedPhoto.updatedAt) {
+            let displayFormatter = DateFormatter()
+            displayFormatter.dateFormat = "yyyy年MM月dd日"
+            detailVC.updateDate = displayFormatter.string(from: date)
+        } else {
+            detailVC.updateDate = "Date not available"
+        }
+
         navigationController?.pushViewController(detailVC, animated: true)
     }
-
     
 }	

@@ -14,8 +14,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MA7-3m-A5y">
-                    <rect key="frame" x="15" y="10.666666666666666" width="290" height="28.666666666666671"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MA7-3m-A5y">
+                    <rect key="frame" x="0.0" y="10.666666666666666" width="305" height="28.666666666666671"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -24,10 +24,9 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="MA7-3m-A5y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="8hl-YD-GQl"/>
-                <constraint firstItem="MA7-3m-A5y" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ECY-ju-o6j"/>
-                <constraint firstItem="MA7-3m-A5y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ePY-qU-Cc1"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MA7-3m-A5y" secondAttribute="trailing" constant="15" id="fb5-O4-8G0"/>
+                <constraint firstItem="MA7-3m-A5y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6q1-Q8-C17"/>
+                <constraint firstItem="MA7-3m-A5y" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="AHv-Jm-pOm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MA7-3m-A5y" secondAttribute="trailing" constant="15" id="EPA-Km-Z82"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

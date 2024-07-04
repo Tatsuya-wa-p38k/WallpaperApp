@@ -41,7 +41,7 @@ class TagSearchAPI {
 }
 
 class TagSearchViewController: UIViewController, UICollectionViewDataSource,
-    UICollectionViewDelegateFlowLayout{
+                               UICollectionViewDelegateFlowLayout{
 
     @IBOutlet weak var tagCollectionView: UICollectionView!
 
@@ -74,19 +74,25 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         let buttons = [redButton, blueButton, greenButton, yellowButton, whiteButton, blackButton]
         for button in buttons {
             button?.layer.cornerRadius = 6 // 角を丸くする半径を指定
+            button?.layer.borderWidth = 1 // 枠線の幅を設定
+            button?.layer.borderColor = UIColor.black.cgColor // 枠線の色を設定
             button?.layer.masksToBounds = true // 角を丸くする
+
+            if let currentFontSize = button?.titleLabel?.font.pointSize {
+                button?.titleLabel?.font = UIFont.systemFont(ofSize: currentFontSize, weight: .semibold)
+            } else {
+                button?.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .semibold)
+            }
         }
     }
-    
-
 
     @IBAction func redTagButton(_ sender: Any) {
         resetButtonColors()
         selectedColor = "red"
-         fetchPhotosForSelectedTag()
-         // ボタンの文字色と背景色を変更する
-         redButton.backgroundColor = .black
-         redButton.tintColor = .white
+        fetchPhotosForSelectedTag()
+        // ボタンの文字色と背景色を変更する
+        redButton.backgroundColor = .black
+        redButton.tintColor = .white
     }
     
     @IBAction func blueTagButton(_ sender: Any) {
@@ -200,14 +206,23 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         guard let detailVC = storyboard.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as? WallpaperDetailViewController else {
             return
         }
+        
         let selectedPhoto = photos[indexPath.item]
         detailVC.imageUrl = selectedPhoto.urls["regular"]
         detailVC.authorName = selectedPhoto.user.name
-        detailVC.source = "Unsplash"  // 配信元を適宜設定する必要があります
-        // 更新日を取得する場合、UnsplashAPIの仕様により写真の更新日を取得できますが、ここでは例として現在の日付を使います
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        detailVC.updateDate = formatter.string(from: Date())
+        detailVC.source = selectedPhoto.user.location ?? "Location not available"
+        detailVC.authorNameToPage = selectedPhoto.user.username
+
+        // 日付フォーマッタを使用して更新日をフォーマット
+        let formatter = ISO8601DateFormatter()
+        if let date = formatter.date(from: selectedPhoto.updatedAt) {
+            let displayFormatter = DateFormatter()
+            displayFormatter.dateFormat = "yyyy年MM月dd日"
+            detailVC.updateDate = displayFormatter.string(from: date)
+        } else {
+            detailVC.updateDate = "Date not available"
+        }
+
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
