@@ -17,7 +17,7 @@ class WallpaperDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "表示したいタイトル"
+        navigationItem.title = authorName
         authorLabel.text = authorName
         sourceLabel.text = source
         updateLabel.text = updateDate
