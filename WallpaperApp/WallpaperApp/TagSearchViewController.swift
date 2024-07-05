@@ -181,8 +181,11 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         if indexPath.item == 0 {
             return CGSize(width: width, height: width) // 1枚目の画像を大きく表示
         } else {
-            let smallerWidth = (width - 1) / 2
-            return CGSize(width: smallerWidth, height: smallerWidth) // 2~5枚目の画像を小さく2列に表示
+            let numberOfItemsPerRow: CGFloat = 2
+            let spacingBetweenItems: CGFloat = 15
+            let totalSpacing = (numberOfItemsPerRow - 1) * spacingBetweenItems
+            let itemWidth = (width - totalSpacing) / numberOfItemsPerRow
+            return CGSize(width: itemWidth, height: itemWidth) // 2~5枚目の画像を小さく2列に表示
         }
     }
 
@@ -193,13 +196,14 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
 
     // セクション内の行間スペースを返すメソッドです。
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1 // 画像間のスペースを設定
+        return 15 // 上下の画像間のスペースを設定
     }
 
     // セクション内のアイテム間スペースを返すメソッドです。
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1 // 画像間のスペースを設定
+        return 15 // 左右の画像間のスペースを設定
     }
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

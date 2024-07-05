@@ -1,6 +1,7 @@
 
 import UIKit
 
+
 class WallpaperDetailViewController: UIViewController {
 
     @IBOutlet weak var detailImageView: UIImageView!
@@ -16,6 +17,7 @@ class WallpaperDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "表示したいタイトル"
         authorLabel.text = authorName
         sourceLabel.text = source
         updateLabel.text = updateDate
@@ -24,10 +26,25 @@ class WallpaperDetailViewController: UIViewController {
             loadImage(from: imageUrl)
         }
 
+        let imageTapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        detailImageView.addGestureRecognizer(imageTapGesture)
+        detailImageView.isUserInteractionEnabled = true
+
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(authorLabelTapped))
          authorLabel.addGestureRecognizer(tapGesture)
          authorLabel.isUserInteractionEnabled = true
     }
+
+    @objc func imageTapped() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Storyboard名を"Main"に変更するか、使用しているStoryboard名に変更
+        let expandVC = storyboard.instantiateViewController(withIdentifier: "WallpaperExpandViewController") as! WallpaperExpandViewController
+        if let imageUrlString = imageUrl, let imageUrl = URL(string: imageUrlString) {
+            expandVC.imageUrl = imageUrl
+        }
+        navigationController?.pushViewController(expandVC, animated: true)
+    }
+
 
     @objc func authorLabelTapped() {
         guard let authorNameToPage = authorNameToPage else { return }

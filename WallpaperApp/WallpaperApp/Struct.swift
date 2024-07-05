@@ -6,14 +6,13 @@ struct Photo: Codable {
     let id: String
     let urls: [String: String]
     let user: User
-    let updatedAt: String // updated_atプロパティを追加
-    
+    let updatedAt: String
 }
 
 struct User: Codable {
     let name: String
     let username: String
-    let location: String? // locationプロパティを追加
+    let location: String?
 }
 
 struct PhotoResults: Codable {
@@ -30,15 +29,4 @@ struct UnsplachUser: Codable {
     let username: String
     let name:String
     let location: String?
-}
-
-struct UnsplachPhotoURLs:Codable {
-    let regular: String
-    let full: String
-}
-
-struct SearchResults: Codable {
-    let total: Int
-    let totalPages: Int
-    let results: [Photo]
 }
