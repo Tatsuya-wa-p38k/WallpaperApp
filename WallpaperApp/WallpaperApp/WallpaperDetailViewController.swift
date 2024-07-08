@@ -45,7 +45,6 @@ class WallpaperDetailViewController: UIViewController {
         navigationController?.pushViewController(expandVC, animated: true)
     }
 
-
     @objc func authorLabelTapped() {
         guard let authorNameToPage = authorNameToPage else { return }
 
