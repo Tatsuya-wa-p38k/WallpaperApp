@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PDf-aX-naL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PDf-aX-naL">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -139,7 +140,6 @@
                     <navigationItem key="navigationItem" id="Gj8-ea-Pcs"/>
                     <connections>
                         <outlet property="wallpaperCollectionView" destination="K2X-Y4-xCC" id="RBm-Uk-EX5"/>
-                        <segue destination="ldh-AI-cbk" kind="show" id="tHv-e3-jGR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6Y-rE-xSk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -225,7 +225,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uq0-gv-Z1C">
                                                 <rect key="frame" x="0.0" y="0.0" width="88" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="red"/>
@@ -237,7 +236,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="88" id="A8F-cC-d7x"/>
                                             <constraint firstAttribute="height" constant="29" id="BgY-e8-WdY"/>
@@ -249,7 +247,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEW-2F-sI2">
                                                 <rect key="frame" x="0.0" y="0.0" width="95" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -264,7 +261,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="95" id="GBG-f9-0R4"/>
                                             <constraint firstAttribute="height" constant="29" id="J4j-xF-z3h"/>
@@ -275,7 +271,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydN-Kz-hff">
                                                 <rect key="frame" x="0.0" y="0.0" width="107" height="29"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="green">
@@ -286,7 +281,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="107" id="71l-gH-JfA"/>
                                             <constraint firstAttribute="trailing" secondItem="ydN-Kz-hff" secondAttribute="trailing" id="Jvj-ux-1QI"/>
@@ -301,7 +295,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opj-qZ-mcv">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="29"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="yellow">
@@ -312,7 +305,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="1J7-W2-sDH"/>
                                             <constraint firstAttribute="trailing" secondItem="opj-qZ-mcv" secondAttribute="trailing" id="5zC-e9-Rrt"/>
@@ -327,7 +319,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eas-BU-c6G">
                                                 <rect key="frame" x="0.0" y="0.0" width="103" height="29"/>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="white">
@@ -338,7 +329,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstItem="eas-BU-c6G" firstAttribute="top" secondItem="xnD-CU-5cl" secondAttribute="top" id="0P3-Rs-LnO"/>
                                             <constraint firstAttribute="trailing" secondItem="eas-BU-c6G" secondAttribute="trailing" id="4pX-gb-fj0"/>
@@ -353,7 +343,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiN-Bq-rgl">
                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="29"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="black">
@@ -364,7 +353,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="104" id="2vX-fX-UH1"/>
                                             <constraint firstItem="KiN-Bq-rgl" firstAttribute="top" secondItem="b6A-qH-Aek" secondAttribute="top" id="3ce-Ev-gQ6"/>
@@ -416,7 +404,6 @@
                         <outlet property="tagCollectionView" destination="0du-XL-rsg" id="dxP-vw-mHl"/>
                         <outlet property="whiteButton" destination="eas-BU-c6G" id="7e0-vP-6e1"/>
                         <outlet property="yellowButton" destination="opj-qZ-mcv" id="Uv1-tj-zBr"/>
-                        <segue destination="ldh-AI-cbk" kind="show" id="hD8-ZB-BaW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTi-pG-WmG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -437,10 +424,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8M-mn-Da5">
-                                <rect key="frame" x="15" y="107" width="372.33333333333331" height="40.666666666666657"/>
-                                <string key="text">このアプリはUnsplash APIを利用して構築した
-Nunoichi Tatsuyaのポートフォリオアプリです。</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="このアプリはUnsplash APIを利用して作成したNunoichi Tatsuyaのポートフォリオアプリです。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8M-mn-Da5">
+                                <rect key="frame" x="15" y="107" width="400" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -451,14 +436,14 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="無料で高品質な写真を提供しているUnsplashに感謝します。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWJ-hD-u0k">
-                                <rect key="frame" x="15" y="210.66666666666666" width="400" height="40.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本アプリの作成にあたり、Unsplash APIの提供に対して心より感謝申し上げます。Unsplashの豊富で高品質な画像ライブラリのおかげで、視覚的に魅力的なアプリケーションを開発することができました。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWJ-hD-u0k">
+                                <rect key="frame" x="15" y="210.66666666666666" width="400" height="81.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jlw-VX-wJs">
-                                <rect key="frame" x="95" y="263.33333333333331" width="240" height="54"/>
+                                <rect key="frame" x="95" y="304" width="240" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="JLa-cA-qbj"/>
                                     <constraint firstAttribute="height" constant="54" id="xGD-90-r5E"/>
@@ -469,16 +454,17 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NGY-S6-94m" firstAttribute="leading" secondItem="tKI-05-p9L" secondAttribute="leading" constant="15" id="3Ha-6o-oa7"/>
-                            <constraint firstItem="n8M-mn-Da5" firstAttribute="top" secondItem="ibD-Ty-dmF" secondAttribute="bottom" constant="12" id="7fr-Ry-M2c"/>
-                            <constraint firstItem="NGY-S6-94m" firstAttribute="top" secondItem="n8M-mn-Da5" secondAttribute="bottom" constant="30" id="87E-MB-iC1"/>
                             <constraint firstItem="ibD-Ty-dmF" firstAttribute="leading" secondItem="tKI-05-p9L" secondAttribute="leading" constant="15" id="8OZ-aN-iGq"/>
                             <constraint firstItem="Jlw-VX-wJs" firstAttribute="top" secondItem="rWJ-hD-u0k" secondAttribute="bottom" constant="12" id="9gl-RK-jRs"/>
+                            <constraint firstItem="n8M-mn-Da5" firstAttribute="top" secondItem="ibD-Ty-dmF" secondAttribute="bottom" constant="12" id="CP8-0f-9uI"/>
                             <constraint firstItem="ibD-Ty-dmF" firstAttribute="top" secondItem="tKI-05-p9L" secondAttribute="top" constant="15" id="Kff-Hj-rx0"/>
-                            <constraint firstItem="n8M-mn-Da5" firstAttribute="leading" secondItem="tKI-05-p9L" secondAttribute="leading" constant="15" id="Rmx-MM-qWE"/>
+                            <constraint firstItem="NGY-S6-94m" firstAttribute="top" secondItem="n8M-mn-Da5" secondAttribute="bottom" constant="30" id="LmN-Rx-vqf"/>
                             <constraint firstItem="Jlw-VX-wJs" firstAttribute="centerX" secondItem="Uwm-3h-SDB" secondAttribute="centerX" id="Sih-cr-YEa"/>
                             <constraint firstItem="rWJ-hD-u0k" firstAttribute="leading" secondItem="tKI-05-p9L" secondAttribute="leading" constant="15" id="iaZ-IN-i1H"/>
                             <constraint firstAttribute="trailing" secondItem="rWJ-hD-u0k" secondAttribute="trailing" constant="15" id="nVh-08-kWg"/>
                             <constraint firstItem="rWJ-hD-u0k" firstAttribute="top" secondItem="NGY-S6-94m" secondAttribute="bottom" constant="12" id="pjy-19-ccD"/>
+                            <constraint firstAttribute="trailing" secondItem="n8M-mn-Da5" secondAttribute="trailing" constant="15" id="q94-Ic-ukd"/>
+                            <constraint firstItem="n8M-mn-Da5" firstAttribute="leading" secondItem="tKI-05-p9L" secondAttribute="leading" constant="15" id="uQN-8B-ULa"/>
                         </constraints>
                     </view>
                     <connections>
@@ -497,7 +483,7 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pdD-cg-ows">
+                            <searchBar contentMode="redraw" placeholder="写真とイラストを検索" translatesAutoresizingMaskIntoConstraints="NO" id="pdD-cg-ows">
                                 <rect key="frame" x="15" y="107" width="400" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -582,6 +568,7 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="pdD-cg-ows" id="hrq-PJ-KoS"/>
                         <outlet property="searchCollectionView" destination="DFJ-kA-EcF" id="c3x-I1-RIC"/>
                     </connections>
                 </viewController>
@@ -691,23 +678,23 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
             <objects>
                 <viewController storyboardIdentifier="WallpaperDetailViewController" id="ldh-AI-cbk" customClass="WallpaperDetailViewController" customModule="WallpaperApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qDf-cy-YDZ">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nvv-ET-kbP">
-                                <rect key="frame" x="15" y="30" width="400" height="400"/>
+                                <rect key="frame" x="15" y="89" width="400" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Nvv-ET-kbP" secondAttribute="height" multiplier="1:1" id="SIm-C7-X9e"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="写真情報" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpA-PR-RTP">
-                                <rect key="frame" x="15" y="460" width="400" height="21"/>
+                                <rect key="frame" x="15" y="519" width="400" height="21"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zfj-86-UZd">
-                                <rect key="frame" x="15" y="493" width="400" height="148"/>
+                                <rect key="frame" x="15" y="552" width="400" height="148"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00t-e6-9dz">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="1"/>
@@ -828,7 +815,6 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
                         <outlet property="detailImageView" destination="Nvv-ET-kbP" id="hHf-VZ-va5"/>
                         <outlet property="sourceLabel" destination="2fa-HC-xma" id="DbT-K1-dON"/>
                         <outlet property="updateLabel" destination="EzK-bL-DSG" id="nsX-PI-ZUf"/>
-                        <segue destination="Wl4-Ae-bS0" kind="show" id="9ie-8i-e1L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbx-Kc-b7N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -840,11 +826,11 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
             <objects>
                 <viewController storyboardIdentifier="WallpaperExpandViewController" id="Wl4-Ae-bS0" customClass="WallpaperExpandViewController" customModule="WallpaperApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LQc-os-qzw">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Oh-8j-79V">
-                                <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l74-HP-vPj"/>
@@ -866,9 +852,6 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
             <point key="canvasLocation" x="2636" y="33"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="tHv-e3-jGR"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="240" height="54"/>
         <systemColor name="linkColor">
@@ -879,12 +862,6 @@ Nunoichi Tatsuyaのポートフォリオアプリです。</string>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

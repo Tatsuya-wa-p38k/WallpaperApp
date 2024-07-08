@@ -17,49 +17,70 @@ protocol FooterTabViewDelegate: AnyObject {
 
 // フッターメニューのビューを定義するクラス
 class FooterTabView: UIView {
-
-    // Interface Builderで接続された影のビュー
+    
     @IBOutlet weak var shadowView: UIView!
-    // Interface Builderで接続された影のビュー
     @IBOutlet weak var contentView: UIView!
-
+    
+    @IBOutlet weak var homeButtonIcon: UIImageView!
+    @IBOutlet weak var tagSerachIcon: UIImageView!
+    @IBOutlet weak var appOverViewIcon: UIImageView!
+    @IBOutlet weak var searchIcon: UIImageView!
+    
+    @IBOutlet weak var homeLabel: UILabel!
+    @IBOutlet weak var tagSearchLabel: UILabel!
+    @IBOutlet weak var appOverViewLabel: UILabel!
+    @IBOutlet weak var searchLabel: UILabel!
     // FooterTabViewDelegateのインスタンスを保持
     var delegate: FooterTabViewDelegate?
-
+    
+    // 現在選択されているタブを保持するプロパティ
+    private var selectedTab: FooterTab?
+    
     // ホームタブがタップされたときに呼び出されるアクション
     @IBAction func didTapHome(_ sender: Any) {
         delegate?.footerTabView(self, didselectTab: .home)
+        resetTabSelection()
+        homeButtonIcon.tintColor = UIColor.darkGray
+        homeLabel.textColor = UIColor.darkGray
     }
-
+    
     // タグ検索タブがタップされたときに呼び出されるアクション
     @IBAction func didTapTagSearch(_ sender: Any) {
         delegate?.footerTabView(self, didselectTab: .tagSearch)
+        resetTabSelection()
+        tagSerachIcon.tintColor = UIColor.darkGray
+        tagSearchLabel.textColor = UIColor.darkGray
     }
-
+    
     // アプリ概要タブがタップされたときに呼び出されるアクション
     @IBAction func didTapAppOverView(_ sender: Any) {
         delegate?.footerTabView(self, didselectTab: .appOverView)
+        resetTabSelection()
+        appOverViewIcon.tintColor = UIColor.darkGray
+        appOverViewLabel.textColor = UIColor.darkGray
     }
-
-    @IBAction func didTapSearch(_ sender: Any)
-        {
-            delegate?.footerTabView(self, didselectTab: .search)
+    
+    @IBAction func didTapSearch(_ sender: Any) {
+        delegate?.footerTabView(self, didselectTab: .search)
+        resetTabSelection()
+        searchIcon.tintColor = UIColor.darkGray
+        searchLabel.textColor = UIColor.darkGray
     }
-
+    
     //カスタムビューの初期化メソッド
     override init(frame: CGRect) {
         super.init(frame: frame)
         load() // Nibファイルからビューをロード
         setup() // ビューの設定を行う
     }
-
+    
     // カスタムビューの初期化メソッド（Interface Builderからインスタンス化された場合に呼び出される）
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         load() // Nibファイルからビューをロード
         setup() // ビューの設定を行う
     }
-
+    
     // ビューの設定を行うメソッド
     func setup() {
         // shadowViewに影を設定
@@ -67,16 +88,16 @@ class FooterTabView: UIView {
         shadowView.layer.shadowOpacity = 0.5
         shadowView.layer.shadowOffset = CGSize(width: 0, height: 2)
         shadowView.layer.shadowRadius = 4
-
+        
         // shadowViewとcontentViewの角を丸くする
         shadowView.layer.cornerRadius = 30
         contentView.layer.cornerRadius = 30
-
+        
         // マスクを有効にすることで角を丸く表示
         shadowView.layer.masksToBounds = false
         contentView.layer.masksToBounds = true
     }
-
+    
     // Nibファイルからビューをロードするメソッド
     func load() {
         if let view = Bundle(for: type(of: self)).loadNibNamed(String(describing: type(of: self)),
@@ -85,4 +106,21 @@ class FooterTabView: UIView {
             self.addSubview(view) // ロードしたビューのフレームを親ビューのサイズに設定
         }
     }
+    
+    // すべてのタブの選択状態をリセットするメソッド
+    private func resetTabSelection() {
+        homeButtonIcon.tintColor = UIColor.lightGray
+        tagSerachIcon.tintColor = UIColor.lightGray
+        appOverViewIcon.tintColor = UIColor.lightGray
+        searchIcon.tintColor = UIColor.lightGray
+        
+        homeLabel.textColor = UIColor.lightGray
+        tagSearchLabel.textColor = UIColor.lightGray
+        appOverViewLabel.textColor = UIColor.lightGray
+        searchLabel.textColor = UIColor.lightGray
+        
+        
+    }
+    
 }
+

@@ -150,7 +150,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         } else {
             detailVC.updateDate = "Date not available"
         }
-
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
