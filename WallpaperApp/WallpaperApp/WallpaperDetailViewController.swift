@@ -1,7 +1,6 @@
 
 import UIKit
 
-
 class WallpaperDetailViewController: UIViewController {
 
     @IBOutlet weak var detailImageView: UIImageView!
@@ -14,10 +13,19 @@ class WallpaperDetailViewController: UIViewController {
     var source: String?
     var updateDate: String?
     var authorNameToPage: String?
+    var alternativeSlugJa: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = authorName
+
+        // alternativeSlugJaを整形してnavigationItem.titleに設定
+        //日本語のタイトル以降に文字列[-英数字]を含むため、それを削除するcleanTitleメソッドを利用
+        if let slug = alternativeSlugJa {
+            navigationItem.title = cleanTitle(slug)
+        } else {
+            navigationItem.title = "詳細"
+        }
+
         authorLabel.text = authorName
         sourceLabel.text = source
         updateLabel.text = updateDate
@@ -34,6 +42,14 @@ class WallpaperDetailViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(authorLabelTapped))
          authorLabel.addGestureRecognizer(tapGesture)
          authorLabel.isUserInteractionEnabled = true
+    }
+
+    func cleanTitle(_ title: String) -> String {
+        // - 以降の部分を取り除く
+        if let range = title.range(of: "-") {
+            return String(title[..<range.lowerBound])
+        }
+        return title
     }
 
     @objc func imageTapped() {

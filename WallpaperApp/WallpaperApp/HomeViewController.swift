@@ -1,7 +1,6 @@
 import UIKit
 
 // Unsplash APIにアクセスするためのキーを定義します。
-// これはAPIを使うためのパスワードのようなものです。
 private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 
 // UnsplashAPIという名前のクラスを定義します。
@@ -104,7 +103,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader
         header.configure(title: "新着写真")
         return header
-        
     }
 
     // セクションのインセットを返すメソッドです。
@@ -150,6 +148,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         } else {
             detailVC.updateDate = "Date not available"
         }
+
+        // alternative_slugsのjaの情報を渡す
+        detailVC.alternativeSlugJa = selectedPhoto.alternativeSlugs["ja"]
+        
         navigationController?.pushViewController(detailVC, animated: true)
     }
     

@@ -12,6 +12,8 @@ class SearchCell: UICollectionViewCell {
         super.awakeFromNib()
         // authorViewの設定を行うカスタムメソッドを呼び出します
         setupAuthorView()
+
+        searchImageVIew.layer.cornerRadius = 10
     }
 
     // authorViewの外観を設定するためのメソッド

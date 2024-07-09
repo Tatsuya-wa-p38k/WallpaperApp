@@ -1,12 +1,12 @@
 
 import Foundation
 
-// これはAPIから取得した写真データを整理して保存するためのものです。
 struct Photo: Codable {
     let id: String
     let urls: [String: String]
     let user: User
     let updatedAt: String
+    let alternativeSlugs: [String: String]
 }
 
 struct User: Codable {
@@ -25,8 +25,8 @@ struct TagSearchParameters:Codable {
     let perPage: Int
 }
 
-struct UnsplachUser: Codable {
-    let username: String
-    let name:String
-    let location: String?
-}
+//struct UnsplachUser: Codable {
+//    let username: String
+//    let name:String
+//    let location: String?
+//}

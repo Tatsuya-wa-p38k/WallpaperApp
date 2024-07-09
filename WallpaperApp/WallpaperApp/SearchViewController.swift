@@ -1,5 +1,6 @@
 import UIKit
 
+// Unsplash APIにアクセスするためのキーを定義します。
 private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 
 class UnsplashSearchAPI {

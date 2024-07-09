@@ -2,7 +2,6 @@
 import UIKit
 
 // Unsplash APIにアクセスするためのキーを定義します。
-// これはAPIを使うためのパスワードのようなものです。
 private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 
 // このクラスには、Unsplash APIから写真を取得する機能があります。
@@ -227,6 +226,9 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
             detailVC.updateDate = "Date not available"
         }
 
+        // alternative_slugsのjaの情報を渡す
+        detailVC.alternativeSlugJa = selectedPhoto.alternativeSlugs["ja"]
+        
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
