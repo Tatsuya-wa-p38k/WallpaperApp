@@ -1,7 +1,7 @@
 
 import UIKit
 
-// ViewControllerはUIViewControllerを継承し、FooterTabViewDelegateプロトコルを採用しています
+// ViewControllerはUIViewControllerを継承し、FooterTabViewDelegateプロトコルを採用
 class ViewController: UIViewController, FooterTabViewDelegate {
 
     // FooterTabViewのアウトレットプロパティ
@@ -60,7 +60,7 @@ class ViewController: UIViewController, FooterTabViewDelegate {
         add(childViewController: viewController)
         return viewController
     }()
-
+    // 選択されたタブに応じてビューコントローラーを切り替えるプライベートメソッド
     private func switchViewController(selectedTab: FooterTab) {
         switch selectedTab {
         case .home:
@@ -104,7 +104,7 @@ class ViewController: UIViewController, FooterTabViewDelegate {
         childViewController.view.removeFromSuperview()
         childViewController.removeFromParent()
     }
-
+    //FooterTabViewDelegateプロトコルのメソッド
     func footerTabView(_ footerTabView: FooterTabView, didselectTab tab: FooterTab) {
         switchViewController(selectedTab: tab)
     }

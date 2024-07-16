@@ -1,31 +1,32 @@
 
 import UIKit
 
-// Unsplash APIにアクセスするためのキーを定義します。
+// Unsplash APIにアクセスするためのキーを定義
 private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 
-// このクラスには、Unsplash APIから写真を取得する機能があります。
+// TagSearchAPIという名前のクラスを定義
 class TagSearchAPI {
     static func fetchPhotosByTag(parameters: TagSearchParameters, completion: @escaping ([Photo]?) -> Void) {
-        // APIのURLを文字列として定義します。
+        // APIのURLを文字列として定義
+        //選択した色に合わせた画像を取得するURL
         let urlString = "https://api.unsplash.com/search/photos?query=\(parameters.query)&color=\(parameters.color)&per_page=\(parameters.perPage)&client_id=\(accessKey)"
-        // URLオブジェクトを生成します。
-        // 文字列が正しいURLでない場合、nilを返して終了します。œ
+        // URLオブジェクトを生成
+        // 文字列が正しいURLでない場合、nilを返して終了
         guard let url = URL(string: urlString) else {
             completion(nil)
             return
         }
 
-        // URLセッションを使用して、指定したURLからデータを非同期で取得します。
+        // URLセッションを使用して、指定したURLからデータを非同期で取得
         URLSession.shared.dataTask(with: url) { data, response, error in
-            // データが取得でき、エラーがないか確認します。
+            // データが取得でき、エラーがないか確認
             guard let data = data, error == nil else {
                 print("データの取得に失敗しました: \(error?.localizedDescription ?? "エラーなし")")
                 completion(nil)
                 return
             }
             do {
-                // 取得したデータをPhotoResultsの配列に変換します。
+                // 取得したデータをPhotoResultsの配列に変換
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let photoResults = try decoder.decode(PhotoResults.self, from: data)
@@ -34,7 +35,7 @@ class TagSearchAPI {
                 print("JSONのデコードに失敗しました: \(error.localizedDescription)")
                 completion(nil)
             }
-        }.resume()// タスクを開始します。
+        }.resume()// タスクを開始
     }
     
 }
@@ -52,9 +53,8 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
     @IBOutlet weak var blackButton: UIButton!
 
     private var photos: [Photo] = []
-    var selectedColor: String = "yellow" // 例: ユーザーが選択した色
+    var selectedColor: String = "red" //最初に表示される色
 
-    // ビューがロードされたときに呼ばれるメソッドです。
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,7 +89,7 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         resetButtonColors()
         selectedColor = "red"
         fetchPhotosForSelectedTag()
-        // ボタンの文字色と背景色を変更する
+        // 押したボタンの文字色と背景色を変更する
         redButton.backgroundColor = .black
         redButton.tintColor = .white
     }
@@ -98,7 +98,7 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         resetButtonColors()
         selectedColor = "blue"
         fetchPhotosForSelectedTag()
-        // ボタンの文字色と背景色を変更する
+        // 押したボタンの文字色と背景色を変更する
         blueButton.backgroundColor = .black
         blueButton.tintColor = .white
     }
@@ -107,7 +107,7 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         resetButtonColors()
         selectedColor = "green"
         fetchPhotosForSelectedTag()
-        // ボタンの文字色と背景色を変更する
+        // 押したボタンの文字色と背景色を変更する
         greenButton.backgroundColor = .black
         greenButton.tintColor = .white
     }
@@ -116,6 +116,7 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         resetButtonColors()
         selectedColor = "yellow"
         fetchPhotosForSelectedTag()
+        // 押したボタンの文字色と背景色を変更する
         yellowButton.backgroundColor = .black
         yellowButton.tintColor = .white
     }
@@ -124,6 +125,7 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         resetButtonColors()
         selectedColor = "white"
         fetchPhotosForSelectedTag()
+        // 押したボタンの文字色と背景色を変更する
         whiteButton.backgroundColor = .black
         whiteButton.tintColor = .white
     }
@@ -132,6 +134,7 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         resetButtonColors()
         selectedColor = "black"
         fetchPhotosForSelectedTag()
+        // 押したボタンの文字色と背景色を変更する
         blackButton.backgroundColor = .black
         blackButton.tintColor = .white
     }
@@ -173,8 +176,8 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         return cell
     }
 
-    // アイテムのサイズを返すメソッドです。
-    // 最初のアイテムは大きく表示し、それ以降は小さく表示します。
+    // アイテムのサイズを返すメソッド
+    // 最初のアイテムは大きく表示し、それ以降は小さく表示
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
         if indexPath.item == 0 {
@@ -188,17 +191,17 @@ class TagSearchViewController: UIViewController, UICollectionViewDataSource,
         }
     }
 
-    // セクションのインセットを返すメソッドです。
+    // セクションのインセットを返すメソッド
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
-    // セクション内の行間スペースを返すメソッドです。
+    // セクション内の行間スペースを返すメソッド。
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15 // 上下の画像間のスペースを設定
     }
 
-    // セクション内のアイテム間スペースを返すメソッドです。
+    // セクション内のアイテム間スペースを返すメソッド
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 15 // 左右の画像間のスペースを設定
     }

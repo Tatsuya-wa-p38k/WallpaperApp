@@ -119,7 +119,6 @@ class FooterTabView: UIView {
         appOverViewLabel.textColor = UIColor.lightGray
         searchLabel.textColor = UIColor.lightGray
         
-        
     }
     
 }

@@ -1,4 +1,5 @@
 import UIKit
+// WebKitフレームワークをインポートすることにより、WKWebViewクラスが使用可能
 import WebKit
 
 class ToUnsplashWebsiteViewController: UIViewController {
@@ -8,10 +9,10 @@ class ToUnsplashWebsiteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Add WKWebView
+        // WKWebViewを作成し、ビューに追加
         webView = WKWebView(frame: CGRect(x: 0, y: topBarHeight, width: self.view.frame.width, height: self.view.frame.height - topBarHeight))
         self.view.addSubview(webView)
-
+        // Unsplashのウェブサイトを開くURLリクエストを作成し、ロード
         if let url = URL(string: "https://unsplash.com/") {
             let request = URLRequest(url: url)
             webView.load(request)

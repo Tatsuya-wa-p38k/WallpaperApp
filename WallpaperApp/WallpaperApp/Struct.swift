@@ -24,9 +24,3 @@ struct TagSearchParameters:Codable {
     let color: String
     let perPage: Int
 }
-
-//struct UnsplachUser: Codable {
-//    let username: String
-//    let name:String
-//    let location: String?
-//}

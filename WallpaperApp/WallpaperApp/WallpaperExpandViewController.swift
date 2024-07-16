@@ -4,11 +4,11 @@ import UIKit
 class WallpaperExpandViewController: UIViewController {
 
     @IBOutlet weak var expandedImageView: UIImageView!
+    // 画像のURLを保持する変数を定義、オプショナル型のURL型
     var imageUrl: URL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         // 画像を設定
                if let imageUrl = imageUrl {
@@ -17,7 +17,7 @@ class WallpaperExpandViewController: UIViewController {
                        DispatchQueue.main.async {
                            self.expandedImageView.image = image
                        }
-                   }.resume()
+                   }.resume()// データタスクを開始
                }
            }
        }
