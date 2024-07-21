@@ -12,6 +12,7 @@ enum FooterTab {
 // FooterTabViewのデリゲートプロトコルを定義
 // フッターメニューのタブが選択されたときに呼び出されるメソッドを持つ
 protocol FooterTabViewDelegate: AnyObject {
+    // このメソッドは、タブが選択されたときにデリゲートに通知するために使用される
     func footerTabView(_ footerTabView: FooterTabView, didselectTab: FooterTab)
 }
 
@@ -30,6 +31,7 @@ class FooterTabView: UIView {
     @IBOutlet weak var tagSearchLabel: UILabel!
     @IBOutlet weak var appOverViewLabel: UILabel!
     @IBOutlet weak var searchLabel: UILabel!
+    
     // FooterTabViewDelegateのインスタンスを保持
     var delegate: FooterTabViewDelegate?
     
@@ -38,8 +40,9 @@ class FooterTabView: UIView {
     
     // ホームタブがタップされたときに呼び出されるアクション
     @IBAction func didTapHome(_ sender: Any) {
+        // デリゲートメソッドを呼び出し、選択されたタブを通知
         delegate?.footerTabView(self, didselectTab: .home)
-        resetTabSelection()
+        resetTabSelection() // 全タブの選択状態をリセット
         homeButtonIcon.tintColor = UIColor.darkGray
         homeLabel.textColor = UIColor.darkGray
     }

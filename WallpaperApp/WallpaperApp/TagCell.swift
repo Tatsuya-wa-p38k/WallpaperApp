@@ -11,18 +11,18 @@ class TagCell: UICollectionViewCell {
         super.awakeFromNib()
         // authorViewの設定を行うカスタムメソッドを呼び出します
         setupAuthorView()
-
+        //tagImageViewの角を丸くする
         tagImageView.layer.cornerRadius = 10
     }
 
     // authorViewの外観を設定するためのメソッド
     private func setupAuthorView() {
-        // authorViewの角を丸くします。値は必要に応じて調整可能です。
+        // authorViewの角を丸くする
         authorView.layer.cornerRadius = 10
-        // authorViewのどの角を丸くするかを指定します。
-        // .layerMinXMinYCornerは左上の角、.layerMinXMaxYCornerは左下の角を指します。
+        // authorViewのどの角を丸くするかを指定。
+        // .layerMinXMinYCornerは左上の角、.layerMinXMaxYCornerは左下の角
         authorView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-        // 角を丸くした部分が親ビューの境界を超えないようにクリップします。
+        // 角を丸くした部分が親ビューの境界を超えないようにクリップ
         authorView.clipsToBounds = true
     }
 

@@ -7,13 +7,12 @@ class AppOverViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        // タップジェスチャーを作成し、unsplashLogoTappedメソッドと関連付け
+    // UITapGestureRecognizerを作成=タップジェスチャーを検出するためのオブジェクト
+    // targetにselfを指定し、actionにunsplashLogoTappedメソッドを指定
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(unsplashLogoTapped))
         // 作成したタップジェスチャーをUnsplashLogoImageViewに追加
         UnsplashLogoImageView.addGestureRecognizer(tapGesture)
-        // UnsplashLogoImageViewのユーザー操作を有効
+        // UnsplashLogoImageViewのユーザー操作を有効し、タップ検出を可にする
         UnsplashLogoImageView.isUserInteractionEnabled = true
     }
 
