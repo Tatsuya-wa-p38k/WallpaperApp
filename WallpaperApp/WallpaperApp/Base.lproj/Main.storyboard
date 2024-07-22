@@ -435,7 +435,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本アプリの作成にあたり、Unsplash APIの提供に対して心より感謝申し上げます。Unsplashの豊富で高品質な画像ライブラリのおかげで、視覚的に魅力的なアプリケーションを開発することができました。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWJ-hD-u0k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本アプリの開発にあたり、Unsplash APIの提供に対して心より感謝申し上げます。Unsplashの豊富で高品質な画像ライブラリのおかげで、視覚的に魅力的なアプリケーションを開発することができました。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWJ-hD-u0k">
                                 <rect key="frame" x="15" y="210.66666666666666" width="400" height="81.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
