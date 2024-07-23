@@ -4,6 +4,7 @@ import UIKit
 //外部から変更できないようにprivateで宣言
 private let accessKey = "5mZ1mWYN9YDqITBv29Lvacog0cUPus5RwqDCeQeHHHc"
 
+// UnsplashAPIクラスの定義、Unsplash APIとの通信を担当
 class UnsplashAPI {
     //新着写真５枚を取得するためのメソッドを定義
     // このメソッドは非同期で動作し、完了時にクロージャーを呼び出す
@@ -44,8 +45,10 @@ class UnsplashAPI {
 
 // HomeViewControllerクラスを定義、ホーム画面のUIと動作を管理
 class HomeViewController: UIViewController {
+
     //CollectionViewのアウトレット接続
     @IBOutlet weak var wallpaperCollectionView: UICollectionView!
+
     // 写真の配列を保持するためのプロパティを定義
     private var photos: [Photo] = []
 
@@ -53,13 +56,15 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         fetchPhotos()
-           }
+        }
 
     // コレクションビューの初期設定を行うプライベートメソッド
     private func setupCollectionView() {
         // セクションヘッダーを登録
+        // これにより、コレクションビューにカスタムヘッダーを使用できる
            wallpaperCollectionView.register(UINib(nibName: "SectionHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader")
         // デリゲートとデータソースを設定
+        // これにより、このViewControllerがコレクションビューの動作とデータを管理
            wallpaperCollectionView.delegate = self
            wallpaperCollectionView.dataSource = self
        }
@@ -83,7 +88,7 @@ class HomeViewController: UIViewController {
    }
 // HomeViewControllerの拡張。UICollectionViewDataSourceとUICollectionViewDelegateFlowLayoutプロトコルを実装
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    // セクション内のアイテム数を返すメソッド
+    // セクション内のアイテム数(画像)を返すメソッド
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
@@ -102,10 +107,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let width = collectionView.bounds.width
         return indexPath.item == 0 ? CGSize(width: width, height: width) : CGSize(width: (width - 15) / 2, height: (width - 15) / 2)
     }
-    
+
+    // セル間の縦方向の最小間隔を設定するメソッド
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
     }
+    
     // セクションヘッダーを設定するメソッド
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeader

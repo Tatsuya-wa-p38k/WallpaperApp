@@ -4,10 +4,12 @@ import UIKit
 // ViewControllerはUIViewControllerを継承し、FooterTabViewDelegateプロトコルを採用
 class ViewController: UIViewController, FooterTabViewDelegate {
 
-    // FooterTabViewのアウトレットプロパティ
+    // FooterTabViewのアウトレット
     @IBOutlet weak var footerTabView: FooterTabView! {
-        // footerTabViewが設定されたときにデリゲートをselfに設定
+        // プロパティオブザーバー: footerTabViewが設定されたときに自動的に呼ばれる
         didSet {
+            // 自身（ViewController）をフッタータブビューのデリゲートとして設定
+            // これにより、タブの選択イベントを受け取れる
             footerTabView.delegate = self
         }
     }
@@ -17,12 +19,12 @@ class ViewController: UIViewController, FooterTabViewDelegate {
 
     override func viewDidLoad() {
          super.viewDidLoad()
-        // 初期表示でホームタブのビューコントローラーを表示
+        // アプリ起動時に最初に表示する画面としてホームタブのビューコントローラーを設定
         switchViewController(selectedTab: .home)
     }
 
-    //homeViewControllerにもfooterTabを
-    // lazyは初めて使用されるまでインスタンス化されない
+    // HomeViewControllerのインスタンスを遅延生成するプロパティ
+    // lazyキーワードにより、このプロパティが最初にアクセスされるまでインスタンス化されない
     private lazy var homeViewController:HomeViewController = {
         // Main.storyboardからHomeViewControllerをインスタンス化
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -32,7 +34,7 @@ class ViewController: UIViewController, FooterTabViewDelegate {
         return viewController
     }()
 
-    //tagSearchViewControllerにもfooterTabを
+    // TagSearchViewControllerのインスタンスを生成するプロパティ
     private lazy var tagSearchViewController:TagSearchViewController = {
         // Main.storyboardからTagSearchViewControllerをインスタンス化
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -42,6 +44,7 @@ class ViewController: UIViewController, FooterTabViewDelegate {
         return viewController
     }()
 
+    // AppOverViewControllerのインスタンスを生成するプロパティ
     private lazy var appOverViewController:AppOverViewController = {
         // Main.storyboardからAppOverViewControllerをインスタンス化
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -51,6 +54,7 @@ class ViewController: UIViewController, FooterTabViewDelegate {
         return viewController
     }()
 
+    // SearchViewControllerのインスタンスを生成するプロパティ
     private lazy var searchViewController:SearchViewController = {
         //Main.storyboardからSearchViewControllerをインスタンス化
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -97,7 +101,7 @@ class ViewController: UIViewController, FooterTabViewDelegate {
 
     //子ViewControllerを追加する
     private func add(childViewController: UIViewController) {
-        // 子ビューコントローラーを追加
+        // 子ビューコントローラーを現在のビューコントローラーの子として追加
         addChild(childViewController)
         // 子ビューコントローラーのビューを現在のビューに追加
         view.addSubview(childViewController.view)
@@ -111,7 +115,7 @@ class ViewController: UIViewController, FooterTabViewDelegate {
 
     //子ViewControllerを削除する
     private func remove(childViewController: UIViewController) {
-        // 子ビューコントローラーの削除を開始
+        // 子ビューコントローラーの削除を開始することを通知
         childViewController.willMove(toParent: nil)
         // 子ビューコントローラーのビューを親ビューから削除
         childViewController.view.removeFromSuperview()

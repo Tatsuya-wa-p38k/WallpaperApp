@@ -1,6 +1,8 @@
 
 import UIKit
 
+// SearchCellという名前のクラスを定義、
+// コレクションビュー内の各セルの振る舞いと外観を定義
 class SearchCell: UICollectionViewCell {
     
     @IBOutlet weak var searchImageVIew: UIImageView!
@@ -10,10 +12,9 @@ class SearchCell: UICollectionViewCell {
     // セルがInterface Builderからロードされたときに呼ばれるメソッド
     override func awakeFromNib() {
         super.awakeFromNib()
-        // authorViewの設定を行うカスタムメソッドを呼び出します
-        setupAuthorView()
 
-        searchImageVIew.layer.cornerRadius = 10
+        setupAuthorView()  // authorViewの設定を行うカスタムメソッドを呼び出し
+        searchImageVIew.layer.cornerRadius = 10 // searchImageVIewの角を丸く設定
     }
 
     // authorViewの外観を設定するためのメソッド
@@ -27,16 +28,22 @@ class SearchCell: UICollectionViewCell {
         searchAuthorView.clipsToBounds = true
     }
 
+    // configure(with:author:)メソッドは、セルに画像URLと作者名を設定するために使用されます。
     func configure(with url: URL, author: String) {
-         // URLから画像を読み込む
+        // URLから画像を非同期で読み込みます。
+        // DispatchQueue.global().asyncを使用してバックグラウンドスレッドで処理を行い、
+        // メインスレッドをブロックしないようにします。
          DispatchQueue.global().async {
+             // URLから画像データを取得しようとします。
              if let data = try? Data(contentsOf: url) {
+                 // 画像データの取得に成功したら、メインスレッドでUIを更新します。
                  DispatchQueue.main.async {
+                     // 取得したデータからUIImageを作成し、imageViewに設定します。
                      self.searchImageVIew.image = UIImage(data: data)
                  }
              }
          }
-         // 作者名を設定
+        // 作者名をラベルに設定します。
          self.searchAuthorLabel.text = author
      }
 }

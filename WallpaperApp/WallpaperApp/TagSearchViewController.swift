@@ -194,14 +194,14 @@ extension TagSearchViewController: UICollectionViewDataSource, UICollectionViewD
         return 15
     }
     
-    // コレクションビューのアイテムが選択されたときに呼ばれるメソッド
+    // コレクションビューのアイテム（写真）が選択された（タップされた）ときに呼び出される関数
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // 詳細画面のビューコントローラーを生成
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailVC = storyboard.instantiateViewController(withIdentifier: "WallpaperDetailViewController") as? WallpaperDetailViewController else {
             return
         }
-        // 選択された写真の情報を詳細画面に渡す
+        // 選択された写真の情報を詳細画面WallpaperDetailViewControllerに渡す
         let selectedPhoto = photos[indexPath.item]
         detailVC.imageUrl = selectedPhoto.urls["regular"]
         detailVC.authorName = selectedPhoto.user.name
@@ -212,7 +212,7 @@ extension TagSearchViewController: UICollectionViewDataSource, UICollectionViewD
         let formatter = ISO8601DateFormatter()
         if let date = formatter.date(from: selectedPhoto.updatedAt) {
             let displayFormatter = DateFormatter()
-            displayFormatter.dateFormat = "yyyy年MM月dd日"
+            displayFormatter.dateFormat = "yyyy年MM月dd日"// 日付を指定した形式の文字列に変換するためのフォーマッタ
             detailVC.updateDate = displayFormatter.string(from: date)
         } else {
             detailVC.updateDate = "Date not available"
